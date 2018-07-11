@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "详细数据",
+  "usingComponents": {
+    "ec-canvas": "../../../ec-canvas/ec-canvas"
+  }
+}

@@ -1,0 +1,113 @@
+<!--date  -->
+ <view class='Report_Date'>
+  <text>{{reporDate}}</text>
+</view>
+<view class='Border'></view>
+<!--Calorie  -->
+ <view class='Report_Calorie'>
+  <text class='Report_Tit'>卡路里分析</text>
+  <view class='Report_Main'>
+    <view class='Report_Main_Top'>
+      <view class='Report_Main_Top_Left'>
+        <view class="container">
+          <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec_Calorie }}"></ec-canvas>
+        </view>
+      </view>
+      <view class='Report_Main_Top_Right'>
+        <text>饮食摄入</text>
+        <text class='amountData'>{{reportData.report_calorie.calorie_amount}}</text>
+        <text>千卡</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class='Report_Legend'>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorGreen'></view>
+        <text class='LegendColumn'>早餐</text>
+        <text class='LegendCount'>{{reportData.report_calorie.calorie_breakfast.amount}}千卡</text>
+        <text class='LegendColumn'>{{reportData.report_calorie.calorie_breakfast.percent}}%</text>
+      </view>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorRed'></view>
+        <text class='LegendColumn'>午餐</text>
+        <text class='LegendCount'>{{reportData.report_calorie.calorie_lunch.amount}}千卡</text>
+        <text class='LegendColumn'>{{reportData.report_calorie.calorie_lunch.percent}}%</text>
+      </view>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorYellow'></view>
+        <text class='LegendColumn'>晚餐</text>
+        <text class='LegendCount'>{{reportData.report_calorie.calorie_dinner.amount}}千卡</text>
+        <text class='LegendColumn'>{{reportData.report_calorie.calorie_dinner.percent}}%</text>
+      </view>
+    </view>
+  </view>
+</view> 
+
+<!--Nutrient  -->
+ <view class='Report_Nutrient'>
+  <text class='Report_Tit'>营养元素分析</text>
+  <view class='Report_Main'>
+    <view class='Report_Main_Top'>
+      <view class='Report_Main_Top_Left'>
+        <view class="container">
+          <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec_Nutrient }}"></ec-canvas>
+        </view>
+      </view>
+      <!-- <view class='Report_Main_CalorieTop_Right'>
+        <text>饮食摄入</text>
+        <text class='amountData'>1111</text>
+        <text>千卡</text>
+      </view> -->
+    </view>
+    <!--Report_Legend  -->
+    <view class='Report_Legend'>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorGreen'></view>
+        <text class='LegendColumn'>碳水</text>
+        <text class='LegendCount'>{{reportData.report_nutrient.nutrient_carbohydrate.amount}}千卡</text>
+        <text class='LegendColumn'>{{reportData.report_nutrient.nutrient_carbohydrate.percent}}%</text>
+      </view>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorRed'></view>
+        <text class='LegendColumn'>脂肪</text>
+        <text class='LegendCount'>{{reportData.report_nutrient.nutrient_fat.amount}}千卡</text>
+        <text class='LegendColumn'>{{reportData.report_nutrient.nutrient_fat.percent}}%</text>
+      </view>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorYellow'></view>
+        <text class='LegendColumn'>蛋白质</text>
+        <text class='LegendCount'>{{reportData.report_nutrient.nutrient_protein.amount}}千卡</text>
+        <text class='LegendColumn'>{{reportData.report_nutrient.nutrient_protein.percent}}%</text>
+      </view>
+    </view>
+    <!--Analysis list  -->
+    <view class='Report_Analysis'>
+      <view class='Report_Analysis_columnTit'>
+        碳水化合物摄入在食物中的含量排名(前三)
+      </view>
+      <view class='Report_Analysis_ranking' wx:for="{{reportData.report_ranking.rank_carbohydrate}}" wx:for-item="CarbohydrateItem" wx:for-key="CarbohydrateIdx" wx:for-index="CarbohydrateIdx">
+        <text class='Index'>{{CarbohydrateIdx + 1}}</text>
+        <text class='Name'>{{CarbohydrateItem.food_name}}</text>
+        <text class='Amount'>{{CarbohydrateItem.food_amount}}克</text>
+      </view>
+
+      <view class='Report_Analysis_columnTit'>
+        脂肪摄入在食物中的含量排名(前三)
+      </view>
+      <view class='Report_Analysis_ranking' wx:for="{{reportData.report_ranking.rank_fat}}" wx:for-item="FatItem" wx:for-key="FatIdx" wx:for-index="FatIdx">
+        <text class='Index'>{{FatIdx + 1}}</text>
+        <text class='Name'>{{FatItem.food_name}}</text>
+        <text class='Amount'>{{FatItem.food_amount}}克</text>
+      </view>
+      <view class='Report_Analysis_columnTit'>
+        蛋白质摄入在食物中的含量排名(前三)
+      </view>
+      <view class='Report_Analysis_ranking' wx:for="{{reportData.report_ranking.rank_protein}}" wx:for-item="ProteinItem" wx:for-key="ProteinIdx" wx:for-index="ProteinIdx">
+        <text class='Index'>{{ProteinIdx + 1}}</text>
+        <text class='Name'>{{ProteinItem.food_name}}</text>
+        <text class='Amount'>{{ProteinItem.food_amount}}克</text>
+      </view>
+
+    </view>
+  </view>
+</view> 

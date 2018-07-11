@@ -1,0 +1,69 @@
+.SignBox{
+  width: 650rpx;
+  height: 550rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  overflow: hidden;
+}
+.SignItem{
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.label{
+  width: 150rpx;
+  margin-right: 10rpx;
+  font-size: 14px;
+  text-align: right;
+}
+input{
+  width: 350rpx;
+  padding: 2rpx 5px;
+  font-size: 14px;
+  border-bottom: 1px solid #3498db;
+}
+.FullWidth{
+  width: 480rpx;
+  padding: 2rpx 5px;
+  font-size: 14px;
+  border-bottom: 1px solid #3498db;
+}
+.GetCode{
+  width: calc(130rpx - 20rpx);
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  padding: 15rpx 10rpx;
+  background: #3498db;
+  color: #fff;
+  text-align: center;
+}
+.CanNotGetCode{
+  width: calc(130rpx - 20rpx);
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  padding: 15rpx 10rpx;
+  background: #ccc;
+  color: #fff;
+  text-align: center;
+}
+.SignBt{
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #3498db;
+  color: #fff;
+  text-align: center;
+  margin: 20px auto 0 auto;
+  border-radius: 10rpx;
+}
+.BottomBox{
+  width: 100%;
+  position: fixed;
+  bottom: -10rpx;
+  left: 0;
+}
+.BottomBox image{
+  width: 100%;
+}

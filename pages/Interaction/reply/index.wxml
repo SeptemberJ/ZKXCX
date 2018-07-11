@@ -1,0 +1,28 @@
+<view class="MessageList">
+  <view class="MessageItem">
+     <view class='peopleInfo'>
+       <image class='Avatar' src='{{Info.head_img}}'></image> 
+        <view class='Info'>
+          <text>{{Info.fnamez}}</text>
+          <text>{{Info.faddtime}}</text>
+        </view>
+        <!-- <view class='reply'><text>回复</text></view> -->
+    </view> 
+    <!--点赞或评论  -->
+    <view class='detailBlock'>
+      <text>{{Info.remark}}</text>
+    </view>
+    <!--原始动态  -->
+    <view class='releaseContentBlock'>
+      <image wx:if='{{Info.ratinglist[0].pic.length>0}}' class='thumbnail' src='{{Info.ratinglist[0].pic[0]}}'></image>
+      <text style='padding:10rpx 20rpx;'>{{Info.ratinglist[0].fname}}: {{Info.ratinglist[0].remark}}</text>
+    </view>
+    <view class='replyBlock'>
+      <textarea class='TextBox' bindinput='ChangeReply' auto-height placeholder="{{'回复' + Info.fnamez}}" />
+      <view class='releaseBt'>
+        <view wx:if="{{!ReplyContent}}" class='normalBt'>回复</view>
+        <view wx:if="{{ReplyContent}}" class='fbBt' bindtap='SumitInfo'>回复</view>
+      </view>
+    </view>
+  </view>
+</view>

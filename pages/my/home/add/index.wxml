@@ -1,0 +1,14 @@
+<view class="inputBar">
+  <input placeholder='输入家的名称' bindinput='ChangeHomeName' value='{{Home_name}}'></input>
+</view>
+<view class='SaveBt'wx:if="{{Membertype != 0 }}">
+  <button class='ColorWhite BgRed' bindtap='SaveHome'>保存</button>
+</view>
+<view class='SaveBt' wx:if="{{Membertype != 0 && Type == 1}}">
+  <button class='ColorWhite BgGray' bindtap='DeleteHome'>删除</button>
+</view>
+<view class='SaveBt'wx:if="{{Membertype == 0}}">
+  <button class='ColorWhite BgRed' bindtap='OutHome'>退出</button>
+</view>
+  
+

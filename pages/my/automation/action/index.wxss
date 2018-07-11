@@ -1,0 +1,87 @@
+page{
+  background: #efefef;
+}
+.ActionList{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-bettween;
+}
+.Action_item{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-bettween;
+}
+.Action_item_tit{
+  width: calc(100% - 40rpx);
+  height: 80rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+.Action_item_tit image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  transform: rotate(90deg);
+}
+
+.EQList_list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+}
+.EQList_list_Item{
+  width: 750rpx;
+  height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+}
+.EQList_list_Item image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 10rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+.EQList_list_text{
+  width: calc(750rpx - 100rpx - 150rpx);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.EQList_list_text_name{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.EQList_list_text_room{
+  font-size: 30rpx;
+  color: #ddd;
+}
+.EQList_list_Item .ControlBt{
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  border: 4rpx solid #3498db;
+}
+.EQList_list_Item .ControlBt image{
+  width: 40rpx;
+  height: 40rpx;
+}

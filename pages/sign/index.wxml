@@ -1,0 +1,28 @@
+<view class="SignBox">
+  <view class='SignItem'>
+    <view class='label'>用户名:</view>
+    <input class='FullWidth' placeholder='请输入用户名' bindinput='ChangeUser_Name'></input>
+  </view>
+  <view class='SignItem'>
+    <view class='label'>手机号:</view>
+    <input placeholder='请输入手机号' type='number' bindinput='ChangeUser_Phone'></input>
+    <view class="{{IfGetCode?'GetCode':'CanNotGetCode'}}" bindtap='GetCode'>{{IfGetCode?'获取验证码':CountDown + 's'}}</view>
+  </view>
+   <view class='SignItem'>
+    <view class='label'>验证码:</view>
+    <input class='FullWidth' placeholder='请输入验证码' bindinput='ChangeUser_code'></input>
+  </view> 
+  <view class='SignItem'>
+    <view class='label'>密码:</view>
+    <input class='FullWidth' type='password' placeholder='请输入密码' bindinput='ChangeUser_Psd'></input>
+  </view>
+  <view class='SignItem'>
+    <view class='label'>确认密码:</view>
+    <input class='FullWidth' type='password' placeholder='请再次确认密码' bindinput='Confirm_Psd'></input>
+  </view>
+  <view class='SignBt' bindtap='Sign'>注册</view>
+</view>
+<view class='BottomBox'>
+  <image src='https://jingshangs.com/upload/SignBgBlue.png'></image>
+</view>
+

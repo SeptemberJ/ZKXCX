@@ -1,0 +1,14 @@
+ <view class='searchBlock'>
+  <view class='searchBar'>
+    <input placeholder='输入食物名称,搜索食物' bindinput='ChangeKeyword'></input>
+  </view>
+</view> 
+
+<view wx:if="{{ResultList.length>0}}" class='foodList'>
+    <view class='foodItem' wx:for="{{ResultList}}" wx:for-item="FoodItem" wx:for-key="FoodIdx" wx:for-index="FoodIdx" bindtap='ToAddFood' data-idx='{{FoodIdx}}'>
+      <view class='food_Text'>
+        <text class='foodItem_tit'>{{FoodItem.eatlist[0].eatname}}</text>
+         <text class='foodItem_text'>{{FoodItem.eatlist[0].eatweight}}克/{{FoodItem.eatlist[0].eatcalories}}千卡</text>  
+      </view>
+    </view>
+</view>

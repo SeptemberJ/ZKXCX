@@ -1,0 +1,112 @@
+ <view class='report_tab'>
+  <view class="switchWrap">
+      <view class="switchItem {{CurSwitch == 0?'active':''}}"></view>
+      <span class="label" bindtap="Switch"><text>体重</text></span>
+      <view class="switchItem {{CurSwitch == 1?'active':''}}"></view>
+      <span class="label" bindtap="Switch"><text>体围</text></span>
+      <view class="switchBar"><text>{{CurSwitch == 0?'体重':'体围'}}</text></view>
+  </view>
+</view>
+
+
+
+<!--体重  -->
+<view wx:if="{{CurSwitch == 0}}">
+  <view class='BodyCircumference'>
+
+    <view class='BodyCircumference_item'>
+      <text class='BodyCircumference_item_tit'>性别</text>
+       <view class='sex_tab'>
+        <view class="switchWrap">
+            <view class="switchItem {{CurSwitch_sex == 0?'active':''}}"></view>
+            <span class="label" bindtap="Switch_sex"><text>男</text></span>
+            <view class="switchItem {{CurSwitch_sex == 1?'active':''}}"></view>
+            <span class="label" bindtap="Switch_sex"><text>女</text></span>
+            <view class="switchBar"><text>{{CurSwitch_sex == 0?'男':'女'}}</text></view>
+        </view>
+      </view>
+    </view>
+    <view class='BodyCircumference_item'>
+      <text class='BodyCircumference_item_tit'>年龄</text>
+      <input type='digit' data-type='age' value="{{BodyCircumference.age}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'></text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <text class='BodyCircumference_item_tit'>身高</text>
+      <input type='digit' data-type='height' value="{{BodyCircumference.height}}"bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>厘米</text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <text class='BodyCircumference_item_tit'>当前体重</text>
+      <input type='digit' data-type='weight_now' value="{{BodyCircumference.weight_now}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>公斤</text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <text class='BodyCircumference_item_tit'>目标体重</text>
+      <input type='digit' data-type='weight_target' value="{{BodyCircumference.weight_target}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>公斤</text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <text class='BodyCircumference_item_tit'>脂肪率</text>
+      <input type='digit' data-type='fat' value="{{BodyCircumference.fat}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>%</text>
+    </view>
+    <view class='SubmitBlock' bindtap='SubmitWeightCircumference'>
+      <text>提交</text>
+    </view>
+  </view>
+</view>
+
+<!--体围  -->
+<view wx:if="{{CurSwitch == 1}}">
+  <view class='Set_date'>
+    <image src='../../images/icon/calendar.png'></image>
+    <picker mode="date" value="{{Cur_date}}" bindchange="ChangeCur_date">
+    <view class="picker">
+      <text>{{Cur_date}}</text>
+    </view>
+    </picker>
+  </view>
+  <!--input  -->
+  <view class='BodyCircumference'>
+    <view class='BodyCircumference_item'>
+      <image class='BodyCircumference_item_icon' src='../../images/icon/waist.png'></image>
+      <text class='BodyCircumference_item_tit'>腰围</text>
+      <input type='digit' data-type='waist' value="{{BodyCircumference.waist}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>厘米</text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <image class='BodyCircumference_item_icon' src='../../images/icon/bust.png'></image>
+      <text class='BodyCircumference_item_tit'>胸围</text>
+      <input type='digit' data-type='bust' value="{{BodyCircumference.bust}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>厘米</text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <image class='BodyCircumference_item_icon' src='../../images/icon/hipline.png'></image>
+      <text class='BodyCircumference_item_tit'>臀围</text>
+      <input type='digit' data-type='hipline' value="{{BodyCircumference.hipline}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>厘米</text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <image class='BodyCircumference_item_icon' src='../../images/icon/arm.png'></image>
+      <text class='BodyCircumference_item_tit'>手臂围</text>
+      <input type='digit' data-type='arm' value="{{BodyCircumference.arm}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>厘米</text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <image class='BodyCircumference_item_icon' src='../../images/icon/thigh.png'></image>
+      <text class='BodyCircumference_item_tit'>大腿围</text>
+      <input type='digit' data-type='thigh' value="{{BodyCircumference.thigh}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>厘米</text>
+    </view>
+    <view class='BodyCircumference_item'>
+      <image class='BodyCircumference_item_icon' src='../../images/icon/leg.png'></image>
+      <text class='BodyCircumference_item_tit'>小腿围</text>
+      <input type='digit' data-type='leg' value="{{BodyCircumference.leg}}" bindinput='ChangeBodyCircumference'></input>
+      <text class='BodyCircumference_item_unit'>厘米</text>
+    </view>
+    <view class='SubmitBlock' bindtap='SubmitBodyCircumference'>
+      <text>提交</text>
+    </view>
+  </view>
+</view>

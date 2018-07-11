@@ -1,0 +1,223 @@
+<!-- <button bindtap="init" >加载图表2</button> -->
+<!-- <button bindtap="dispose" >卸载</button> -->
+ <view class='report_tab'>
+  <view class="switchWrap">
+      <view class="switchItem {{CurSwitch == 0?'active':''}}"></view>
+      <span class="label" bindtap="Switch"><text>数据指标</text></span>
+      <view class="switchItem {{CurSwitch == 1?'active':''}}"></view>
+      <span class="label" bindtap="Switch"><text>身体测评</text></span>
+      <view class="switchBar"><text>{{CurSwitch == 0?'数据指标':'身体测评'}}</text></view>
+  </view>
+</view> 
+
+
+<!-- <view wx:if="{{CurSwitch == 0}}" class='DataIndex'> -->
+<view hidden="{{CurSwitch == 1}}" class='DataIndex'>
+  <!--first  -->
+  <view class='DataIndex_item'>
+    <view class='DataIndex_item_inner'>
+      <text class='Bold'>当前体重（公斤）</text>
+      <view class='report_data'>
+        <text class='report_data_weight'>{{HeathDataIndex.weight}}</text>
+        <text class='report_data_BMI'>BMI:{{HeathDataIndex.BMI}}</text>
+      </view>
+
+      <view class='report_data_weight_level'>
+        <view class='level_typeData'>
+          <text>18.5</text>
+          <text>24.0</text>
+          <text>28.0</text>
+          <text>30.0</text>
+        </view>
+        <view class='level_bar'>
+          <text class='level_1'></text>
+          <text class='level_2'></text>
+          <text class='level_3'></text>
+          <text class='level_4'></text>
+          <text class='level_5'></text>
+          <image class='triangleIndex' style="left:{{distance}}rpx" src='../../../images/icon/triangleIndex.png'></image>
+        </view>
+        <view class='level_text' style='margin-top:30rpx;'>
+          <text class='text_center'>偏瘦</text>
+          <text class='text_center'>标准</text>
+          <text class='text_center'>偏胖</text>
+          <text class='text_center'>肥胖</text>
+          <text class='text_center'>重度</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--weight  -->
+  <view class='DataIndex_item'>
+    <view class='DataIndex_item_inner'>
+      <view class='report_data_weight_bar'>
+        <image src='../../../images/icon/balance.png'></image>
+        <text class='weight_bar_tit'>体重</text>
+        <text class='weight_bar_data'>{{HeathDataIndex.weight}}公斤</text>
+        <text class="{{'weight_bar_level_' + HeathDataIndex.type}}">{{HeathDataIndex.type == 1?'偏瘦':(HeathDataIndex.type == 2?'标准':(HeathDataIndex.type == 3?'偏胖':(HeathDataIndex.type == 4?'肥胖':'重度')))}}</text>
+      </view>
+    </view>
+  </view>
+  <!--BMI  -->
+  <view class='DataIndex_item'>
+    <view class='DataIndex_item_inner'>
+      <view class='report_data_weight_bar'>
+        <image src='../../../images/icon/B.png'></image>
+        <text class='weight_bar_tit'>BMI</text>
+        <text class='weight_bar_data'>{{HeathDataIndex.BMI}}</text>
+        <text class="{{'weight_bar_level_' + HeathDataIndex.type}}">{{HeathDataIndex.type == 1?'偏瘦':(HeathDataIndex.type == 2?'标准':(HeathDataIndex.type == 3?'偏胖':(HeathDataIndex.type == 4?'肥胖':'重度')))}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view wx:if="{{CurSwitch == 1}}" class='HeathEvaluation'> -->
+<view hidden="{{CurSwitch == 0}}" class='DataIndex'>
+  <!--weight control  -->
+  <view class='HeathEvaluation_item'>
+     <view class='HeathEvaluation_item_inner'>
+      <text class='Bold'>体重控制</text>
+      <view class='HeathEvaluation_process'>
+        <text class='HeathEvaluation_process_tit'>体重</text>
+        <view class='process_block'>
+          <progress class="progress" percent="{{HeathEvaluation.weight.weight_differ_i>0 ?50 - HeathEvaluation.weight.weight_differ_i :50 - HeathEvaluation.weight.weight_differ_i }}"  stroke-width="3"  backgroundColor="#ccc" activeColor="#8ce1fa" active="true" >
+          <text class='HalfLine'></text>
+          </progress>
+          <text>理想：{{HeathEvaluation.weight.weight_ideal == 0 ?'--':HeathEvaluation.weight.weight_ideal}}公斤</text>
+        </view>
+        <text class='HeathEvaluation_process_data'>{{HeathEvaluation.weight.weight_differ_i >0?'需 +':'需'}} {{HeathEvaluation.weight.weight_differ_i}}公斤</text>
+      </view>
+
+       <view class='HeathEvaluation_process'>
+        <text class='HeathEvaluation_process_tit'>肌肉</text>
+        <view class='process_block'>
+          <progress class="progress" percent="0"  stroke-width="3"  backgroundColor="#ccc" activeColor="#53405c" active="true" >
+          <!-- <progress class="progress" percent="{{HeathEvaluation.muscle.muscle_differ_i>0 ?50 - HeathEvaluation.muscle.muscle_differ_i :50 - HeathEvaluation.muscle.muscle_differ_i }}"  stroke-width="3"  backgroundColor="#ccc" activeColor="#53405c" active="true" > -->
+          <text class='HalfLine'></text>
+          </progress>
+          <text>理想：{{HeathEvaluation.muscle.muscle_ideal == 0 ?'--':HeathEvaluation.muscle.muscle_ideal}}公斤</text>
+        </view>
+        <text class='HeathEvaluation_process_data'>{{HeathEvaluation.muscle.muscle_differ_i >0?'需 +':'需'}} {{HeathEvaluation.muscle.muscle_differ_i}}公斤</text>
+      </view>
+
+      <view class='HeathEvaluation_process'>
+        <text class='HeathEvaluation_process_tit'>脂肪</text>
+        <view class='process_block'>
+          <progress class="progress" percent="{{HeathEvaluation.fat.fat_differ_i>0 ?50 - HeathEvaluation.fat.fat_differ_i :50 - HeathEvaluation.fat.fat_differ_i }}"  stroke-width="3"  backgroundColor="#ccc" activeColor="#f60" active="true" >
+          <text class='HalfLine'></text>
+          </progress>
+          <text>理想：{{HeathEvaluation.fat.fat_ideal == 0 ? '--':HeathEvaluation.fat.fat_ideal}}公斤</text>
+        </view>
+        <text class='HeathEvaluation_process_data'>{{HeathEvaluation.fat.fat_differ_i >0?'需 +':'需'}} {{HeathEvaluation.fat.fat_differ_i}}公斤</text>
+      </view>
+
+      
+     </view> 
+  </view>
+  <!--target  -->
+  <view class='HeathEvaluation_item'>
+     <view class='HeathEvaluation_item_inner'>
+      <view class='Target'>
+        <view class='Target_icon'>
+          <image style="left:{{HeathEvaluation.weight.weight_now>HeathEvaluation.weight.weight_target?'560':560/HeathEvaluation.weight.weight_target*HeathEvaluation.weight.weight_now}}rpx" src='../../../images/icon/run.png'></image>
+        </view>
+        <view class='Target_process'>
+          <progress class="progress" percent="{{HeathEvaluation.weight.weight_now>HeathEvaluation.weight.weight_target?100 - (HeathEvaluation.weight.weight_now - HeathEvaluation.weight.weight_target):100 - (HeathEvaluation.weight.weight_target - HeathEvaluation.weight.weight_now)}}"  stroke-width="3"  backgroundColor="#ccc" activeColor="#8ce1fa" active="true" >
+        </progress>
+        </view>
+        <view class='Target_text'>
+          <text>目标体重：{{HeathEvaluation.weight.weight_target}}公斤，还{{HeathEvaluation.weight.weight_differ_t >0?'需 +':'需'}}{{HeathEvaluation.weight.weight_differ_t}}公斤</text>
+        </view>
+      </view>
+     </view>
+  </view>
+  <!--weight chart  -->
+  <view class='HeathEvaluation_item'>
+     <view class='HeathEvaluation_item_inner'>
+      <view hidden="{{HeathEvaluation.weight_trend.weight_trend_data.length<2}}" class='Chart_weight'>
+        <text class='Bold'>近期（一个月）体重变化</text>
+        <view class='Chart_weight_trend'>
+          <view class='compare_item compare_lately'>
+            <image src="{{HeathEvaluation.weight_trend.weight_lately_number > 0?'../../../images/icon/weightUp.png':'../../../images/icon/weightDown.png'}}"></image>
+            <text class='compare_item_Number'>{{HeathEvaluation.weight_trend.weight_lately_number}}</text>
+            <view class='compare_Date'>
+              <text>比上次</text>
+              <text>{{HeathEvaluation.weight_trend.weight_lately_date}}</text>
+            </view>
+          </view>
+          <view class='compare_item compare_furthest'>
+            <image src="{{HeathEvaluation.weight_trend.weight_month_number > 0?'../../../images/icon/weightUp.png':'../../../images/icon/weightDown.png'}}"></image>
+            <text class='compare_item_Number'>{{HeathEvaluation.weight_trend.weight_month_number}}</text>
+            <view class='compare_Date'>
+              <text>比最近一个月</text>
+              <text>{{HeathEvaluation.weight_trend.weight_month_date}}</text>
+            </view>
+          </view>
+        </view>
+        <view hidden="{{isDisposed}}" class="container">
+          <ec-canvas  id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+        </view>
+      </view>
+      <!--记录少于两条  -->
+      <view hidden="{{HeathEvaluation.weight_trend.weight_trend_data.length>=2}}" class='Chart_weight'>
+        <text class='Bold'>近期（一个月）体重变化</text>
+        <text class='recordLess'>记录太少，多记录几次在来吧</text>
+      </view>
+
+     </view>
+  </view>
+  <!--disease  -->
+  <view class='HeathEvaluation_item'>
+    <view class='HeathEvaluation_item_inner'>
+      <text class='Bold'>疾病风险评估</text>
+      <view class='disease_item'>
+        <image class='disease_icon' src='../../../images/icon/Sphygmomanometer.png'></image>
+        <text class='disease_name'>高血压</text>
+        <progress class="progress" percent="{{HeathEvaluation.disease.hypertension / 5 * 100}}"  stroke-width="3"  activeColor="{{HeathEvaluation.disease.hypertension == 1?'#8ce1fa':(HeathEvaluation.disease.hypertension == 2?'#78cd78':(HeathEvaluation.disease.hypertension == 3?'#ffdc78':(HeathEvaluation.disease.hypertension == 4?'#ff4b5a':'#c83a3a')))}}" active="true" >
+        </progress>
+        <view class="levelBlock {{'levelBlock_' + HeathEvaluation.disease.hypertension}}">
+          <text>
+          {{HeathEvaluation.disease.hypertension == 1?'低风险':(HeathEvaluation.disease.hypertension == 2?'一般':(HeathEvaluation.disease.hypertension == 3?'中度风险':(HeathEvaluation.disease.hypertension == 4?'高度风险':'危险')))}}
+          </text>
+          <view class="Sharp_left {{'Sharp_left_' + HeathEvaluation.disease.hypertension}}"></view>
+        </view>
+      </view>
+      <view class='disease_item'>
+        <image class='disease_icon' src='../../../images/icon/Liver.png'></image>
+        <text class='disease_name'>脂肪肝</text>
+        <progress class="progress" percent="{{HeathEvaluation.disease.fattyLiver / 5 * 100}}"  stroke-width="3"  activeColor="{{HeathEvaluation.disease.fattyLiver == 1?'#8ce1fa':(HeathEvaluation.disease.fattyLiver == 2?'#78cd78':(HeathEvaluation.disease.fattyLiver == 3?'#ffdc78':(HeathEvaluation.disease.fattyLiver == 4?'#ff4b5a':'#c83a3a')))}}" active="true" >
+        </progress>
+        <view class="levelBlock {{'levelBlock_' + HeathEvaluation.disease.fattyLiver}}">
+          <text>
+          {{HeathEvaluation.disease.fattyLiver == 1?'低风险':(HeathEvaluation.disease.fattyLiver == 2?'一般':(HeathEvaluation.disease.fattyLiver == 3?'中度风险':(HeathEvaluation.disease.fattyLiver == 4?'高度风险':'危险')))}}
+          </text>
+          <view class="Sharp_left {{'Sharp_left_' + HeathEvaluation.disease.fattyLiver}}"></view>
+        </view>
+      </view>
+      <!-- <view class='disease_item'>
+        <image class='disease_icon' src='../../../images/icon/bloodFat.png'></image>
+        <text class='disease_name'>高血脂</text>
+        <progress class="progress" percent="{{HeathEvaluation.disease.bloodFat / 5 * 100}}"  stroke-width="3"  activeColor="{{HeathEvaluation.disease.bloodFat == 1?'#8ce1fa':(HeathEvaluation.disease.bloodFat == 2?'#78cd78':(HeathEvaluation.disease.bloodFat == 3?'#ffdc78':(HeathEvaluation.disease.bloodFat == 4?'#ff4b5a':'#c83a3a')))}}" active="true" >
+        </progress>
+        <view class="levelBlock {{'levelBlock_' + HeathEvaluation.disease.bloodFat}}">
+          <text>
+          {{HeathEvaluation.disease.bloodFat == 1?'低风险':(HeathEvaluation.disease.bloodFat == 2?'一般':(HeathEvaluation.disease.bloodFat == 3?'中度风险':(HeathEvaluation.disease.bloodFat == 4?'高度风险':'危险')))}}
+          </text>
+          <view class="Sharp_left {{'Sharp_left_' + HeathEvaluation.disease.bloodFat}}"></view>
+        </view>
+      </view>
+      <view class='disease_item'>
+        <image class='disease_icon' src='../../../images/icon/bloodSugar.png'></image>
+        <text class='disease_name'>糖尿病</text>
+        <progress class="progress" percent="{{HeathEvaluation.disease.diabetes / 5 * 100}}"  stroke-width="3"  activeColor="{{HeathEvaluation.disease.diabetes == 1?'#8ce1fa':(HeathEvaluation.disease.diabetes == 2?'#78cd78':(HeathEvaluation.disease.diabetes == 3?'#ffdc78':(HeathEvaluation.disease.diabetes == 4?'#ff4b5a':'#c83a3a')))}}" active="true" >
+        </progress>
+        <view class="levelBlock {{'levelBlock_' + HeathEvaluation.disease.diabetes}}">
+          <text>
+          {{HeathEvaluation.disease.diabetes == 1?'低风险':(HeathEvaluation.disease.diabetes == 2?'一般':(HeathEvaluation.disease.diabetes == 3?'中度风险':(HeathEvaluation.disease.diabetes == 4?'高度风险':'危险')))}}
+          </text>
+          <view class="Sharp_left {{'Sharp_left_' + HeathEvaluation.disease.diabetes}}"></view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</view>

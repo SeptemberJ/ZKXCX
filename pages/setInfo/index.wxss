@@ -1,0 +1,176 @@
+/*report_tab  */
+.report_tab{
+    padding: 20rpx  0rpx 40rpx 0;
+    text-align: center;
+    background: #fff;
+}
+.report_tab .switchWrap{
+    width: 180px;
+    height: 30px;
+    margin: 0 auto;
+    border-radius:25px; 
+    border: 1px solid #3498db;
+    background-color: #3498db;
+    position: relative;
+    overflow: hidden;
+}
+.report_tab .switchItem{
+    width: 90px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+}
+.report_tab .label{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    float: left;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    font-size:12px;
+    color:#fff;
+}
+.report_tab .switchWrap .active  + .label + .switchBar{
+    -webkit-transform: translateX(90px);
+    -moz-transform: translateX(90px);
+    -ms-transform: translateX(90px);
+    -o-transform: translateX(90px);
+    transform: translateX(90px);
+}
+.report_tab .switchBar{
+    width: 90px;
+    height: 30px;
+    color: #3498db;
+    line-height: 30px;
+    text-align: center;
+    border-radius:25px; 
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    transition: transform 0.5s;
+}
+/*sex_tab  */
+.sex_tab{
+  padding: 20rpx  0rpx 40rpx 0;
+  text-align: center;
+  background: #fff;
+}
+.sex_tab .switchWrap{
+    width: 90px;
+    height: 25px;
+    margin: 0 auto;
+    border-radius:25px; 
+    border: 1px solid #8ce1fa;
+    background-color: #8ce1fa;
+    position: relative;
+    overflow: hidden;
+}
+.sex_tab .switchItem{
+    width: 45px;
+    height: 25px;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    position: absolute;
+}
+.sex_tab .label{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    float: left;
+    width: 45px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    font-size:12px;
+    color:#fff;
+}
+.sex_tab .switchWrap .active  + .label + .switchBar{
+    -webkit-transform: translateX(45px);
+    -moz-transform: translateX(45px);
+    -ms-transform: translateX(45px);
+    -o-transform: translateX(45px);
+    transform: translateX(45px);
+}
+.sex_tab .switchBar{
+    width: 45px;
+    height: 25px;
+    color: #8ce1fa;
+    line-height: 25px;
+    text-align: center;
+    border-radius:25px; 
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    transition: transform 0.5s;
+}
+/*Set_date  */
+.Set_date{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Set_date image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+  display: block;
+}
+/*BodyCircumference  */
+.BodyCircumference{
+  width: 710rpx;
+  margin: 20rpx auto;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: flex-start;
+}
+.BodyCircumference_item{
+  width: 710rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.BodyCircumference_item_icon{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 10rpx;
+  display: block;
+}
+.BodyCircumference_item input{
+  width: 200rpx;
+  border-bottom: 1px solid #efefef;
+}
+.BodyCircumference_item_tit{
+  width: 300rpx;
+  text-align: left;
+}
+.BodyCircumference_item_unit{
+  width: 120rpx;
+  text-align: center;
+}
+.SubmitBlock{
+  width: 300rpx;
+  height: 80rpx;
+  background: #3498db;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  margin: 40rpx auto;
+}

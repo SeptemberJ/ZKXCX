@@ -1,0 +1,117 @@
+<view class='InfoBlock'>
+  <image class="Avatar"  wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" ></image>
+  <image class="Avatar" wx:if="{{!userInfo.avatarUrl}}" src="../../../images/icon/unauthorized.png" bindtap='GetAuthorize'></image>
+  <text class="nickName">{{AccountName}}</text>
+  <view class='HorizontalColumn'>
+    <view class='HorizontalItem RightBoder' bindtap='MyIntegral'>
+      <image class='smallIcon' src='../../../images/icon/integral.png'></image>
+      <text>我的积分</text>
+    </view>
+    <view class='HorizontalItem' bindtap='toMall'>
+      <image class='smallIcon' src='../../../images/icon/shoppingMall.png'></image>
+      <text>兑换商城</text>
+    </view>
+  </view>
+</view>
+
+
+<view class='optionList'>
+  <view class='optionItem' bindtap='MyMessage'>
+    <image class='smallIcon' src='../../../images/icon/my_message.png'></image>
+    <view class='optionTit'>
+      <text>我的消息</text>
+      <text class='MessageCount' style='color:red;'>{{MessageCount>0?MessageCount:''}}</text>
+    </view>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view>
+
+  <view class='optionItem' bindtap='MyRelease'>
+    <image class='smallIcon' src='../../../images/icon/Release.png'></image>
+    <text class='optionTit'>我的动态</text>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view>
+</view>
+
+<view class='optionList'>
+  <view class='optionItem' bindtap='MyWeight'>
+    <image class='smallIcon' src='../../../images/icon/weight.png'></image>
+    <text class='optionTit'>我的体重</text>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view>
+
+  <view class='optionItem' bindtap='MyDiet'>
+    <image class='smallIcon' src='../../../images/icon/diet.png'></image>
+    <text class='optionTit'>我的饮食</text>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view>
+
+  <view class='optionItem' bindtap='ToCookingRecord'>
+    <image class='smallIcon' src='../../../images/icon/cookingRecord.png'></image>
+    <text class='optionTit'>烹饪记录</text>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view> 
+</view>
+
+
+<view class='optionList MarginT_10'>
+  <!-- <view class='optionItem' bindtap=''>
+    <image class='smallIcon' src='../../../images/icon/Invitation.png'></image>
+    <view class='optionTit'>
+      <text>邀请好友</text>
+      <text class='MessageCount' style='color:red;'>{{MessageCount>0?MessageCount:''}}</text>
+    </view>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view> -->
+  <view class='optionItem' bindtap='ToHome'>
+    <image class='smallIcon' src='../../../images/icon/house.png'></image>
+    <view class='optionTit'>
+      <text>我的家</text>
+    </view>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view>
+
+  <!-- <view class='optionItem' bindtap='ToEquipment'>
+    <image class='smallIcon' src='../../../images/icon/equipment.png'></image>
+    <view class='optionTit'>
+      <text>设备管理</text>
+    </view>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view> -->
+
+  <view class='optionItem' bindtap=''>
+    <image class='smallIcon' src='../../../images/icon/service.png'></image>
+    <view class='optionTit'>
+      <text>智控客服</text>
+    </view>
+    
+    <!-- <contact-button class="goService"
+  type="default-dark" 
+  size="27"
+  session-from="柏田商城系统"
+></contact-button> -->
+     <image class='smallIcon_arrow' src='../../../images/icon/icon_tele.png' bindtap='MakeCall'></image> 
+  </view>
+
+</view>
+
+
+
+
+
+  <!-- <view class='optionItem' bindtap='MyWeight'>
+    <image class='smallIcon' src='../../../images/icon/weight.png'></image>
+    <text class='optionTit'>我的体重</text>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view>
+
+    <view class='optionItem' bindtap='MyDiet'>
+    <image class='smallIcon' src='../../../images/icon/diet.png'></image>
+    <text class='optionTit'>我的饮食</text>
+    <image class='smallIcon_arrow' src='../../../images/icon/arrow_black.png'></image>
+  </view> -->
+
+
+
+<view class='LogOutBlock'>
+  <button class='ColorWhite BgRed' bindtap='LogOut'>退出登录</button> 
+</view>

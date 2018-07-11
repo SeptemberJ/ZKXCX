@@ -1,0 +1,20 @@
+<view class="Inputitem">
+  <text style='padding-left:10rpx;color:ddd;'>房间图片：</text>
+  <picker-view indicator-style="height: 30px;" style="width: 30px; height: 30px;" value="{{Room_Icon_index}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{IconList}}" wx:for-index="IconIdx" wx:for-item="Icon" wx:key="IconIdx" style="line-height: 30px">
+        <image style='width:30px;height:30px;' src="{{Icon.roomimg}}"></image>
+      </view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+<view class="inputBar">
+  <input placeholder='输入房间的名称' value="{{Room_name}}" bindinput='ChangeRoomName'></input>
+</view>
+
+<view class='SaveBt'>
+  <button class='ColorWhite BgRed' bindtap='Save'>保存</button>
+</view>
+  
+

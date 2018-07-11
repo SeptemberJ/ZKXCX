@@ -1,0 +1,30 @@
+<view class="sexBlock">
+  <view class="{{Sex==0?'sexItem_active':'sexItem'}}" bindtap="ChooseSex" data-sex='0'>
+    <image src='../../images/icon/boy.png'></image>
+    <text>男</text>
+  </view>
+  <view class="{{Sex==1?'sexItem_active':'sexItem'}}" bindtap="ChooseSex" data-sex='1'>
+    <image src='../../images/icon/girl.png'></image>
+    <text>女</text>
+  </view>
+</view>
+<view class='InfoItem'>
+  <text class='label'>年龄：</text>
+  <input type='number' placeholder='您的年龄' bindinput='ChangeAge'></input>
+</view>
+<view class='InfoItem'>
+  <text class='label'>身高：</text>
+  <input type='digit' placeholder='单位：厘米' bindinput='ChangeHeight'></input>
+</view>
+<view class='InfoItem'>
+  <text class='label'>目前体重：</text>
+  <input type='digit' placeholder='单位：千克' bindinput='ChangeWeight_now'></input>
+</view>
+<view class='InfoItem'>
+  <text class='label'>目标体重：</text>
+  <input type='digit' placeholder='单位：千克' bindinput='ChangeWeight_target'></input>
+</view>
+
+<view class='submitBlock'>
+  <button class='ColorWhite BgRed' bindtap='Submit'>提交</button> 
+</view>

@@ -1,0 +1,44 @@
+page{
+  background: #efefef;
+}
+.SceneItem{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.SceneItem input{
+  width: 400rpx;
+  padding-right: 30rpx;
+  font-size: 30rpx;
+  text-align: right;
+}
+.SceneItem_icon , .SceneItem_arrow{
+  width: 80rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SceneItem image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+.SceneItem_tit{
+  width: calc(750rpx - 80rpx - 80rpx - 200rpx);
+  height: 80rpx;
+  text-align: left;
+  line-height: 80rpx;
+}
+.SceneItem_count{
+  width: 200rpx;
+  height: 80rpx;
+  color: #999;
+  text-align: right;
+  line-height: 80rpx;
+}

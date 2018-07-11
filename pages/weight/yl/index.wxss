@@ -1,0 +1,150 @@
+
+.weight{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start
+}
+.topBlock{
+  width: 100%;
+  height: 500rpx;
+  position: relative;
+}
+.overlay{
+  width: 100%;
+  height: 500rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #273653;
+  opacity: .8;
+}
+/*进度条  */
+.dataCircle{
+  width: 300rpx;
+  height: 300rpx;
+  /* border-radius: 50%;  */
+  position: absolute;
+  top: 60rpx;
+  left: 225rpx;
+  /* border: 4px solid #478ee6;  */
+}
+.wrap,.circle,.percent{  
+    position: absolute;  
+    width: 300rpx;
+    height: 300rpx; 
+    border-radius: 50%;
+    padding: 0 !important; 
+}  
+.wrap{  
+    /* top:50rpx;  
+    left:50rpx;    */
+    background-color: transparent; 
+     
+}  
+.circle{  
+    box-sizing: border-box;  
+    border:10rpx solid #30415b;  
+    clip:rect(0,300px,300px,150px);  
+}  
+.clip-auto{  
+    clip:rect(auto, auto, auto, auto);  
+}  
+.percent{  
+    box-sizing: border-box;  
+    top:-8rpx;  
+    left:-8rpx;  
+}  
+.dataCircle .left{  
+    transition:transform ease;  
+    border:10rpx solid #478ee6;  
+    clip: rect(0,150rpx,300rpx,0);  
+}  
+.dataCircle .right{  
+    border:10rpx solid #478ee6;  
+    clip: rect(0,300rpx,300rpx,150rpx);  
+}  
+.wth0{  
+    width:0;  
+}  
+.dataInfo{
+    width: 280rpx;  
+    height: 280rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;  
+    box-sizing: border-box;
+    text-align: center; 
+    left: 12rpx;  
+    top: 12rpx;  
+    border-radius: 50%;  
+    background-color: transparent; 
+    z-index: 1;  
+    color: #fff;
+}
+.targetBlock{
+  width: 180rpx;
+  padding: 3rpx 10rpx;
+  border: 1px solid #fff;
+  margin-top: 10px;
+  border-radius: 30rpx;
+}
+.bigSize{
+  font-size: 50rpx;
+}
+/*historyList  */
+.historyList{
+  width: 710rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.columnTit{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px auto;
+}
+.columnTit_icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.List{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.List_item{
+  width: 100%;
+  height:50px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.doubleBlock{
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.doubleBlock text{
+  color: #626262;
+}
+.kindTit{
+  font-size: 30rpx;
+  color: #999;
+}
+.bigFont{
+  font-size: 40rpx;
+  color: #626262;
+}

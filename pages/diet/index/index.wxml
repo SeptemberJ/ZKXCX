@@ -1,0 +1,161 @@
+<view class='diet'>
+  <image class='topBlock' src='https://jingshangs.com/upload/diet.png'></image>
+  <view class='overlay'></view>
+  <!--calendar  -->
+  <view class='Calendar'>
+    <text>{{chooseDate}}</text>
+    <picker class='picker' mode="date" end="{{nowDate}}" bindchange="DateChange">
+      <image class='smallIcon' src='../../../images/icon/calendar.png'></image>
+      <!-- <view class="picker">
+        日期{{chooseDate}}
+      </view> -->
+    </picker>
+  </view> 
+  <!--dataCircle  -->
+    <view class='dataCircle'>
+    <view class="wrap">  
+      <view class="{{ifOver?'circle':'circle'}}  {{percent>50?'clip-auto':''}}">  
+          <view class="percent {{ifOver?'left_over':'left'}}" style="transform:rotate({{(18/5)*percent+'deg'}})"></view>  
+          <view class="percent {{ifOver?'right_over':'right'}} {{percent>50?'':'wth0'}}"></view>  
+      </view>  
+        <view class="dataInfo">
+          <view><text class='samllSize'>{{ifOver?'已超出':'还可以摄入'}}</text></view>
+          <view><text class='bigSize'>{{Surplus}}</text></view>
+          <view><text class='samllSize'>千卡</text></view>
+       </view>    
+    </view>
+  </view>
+  <!--columnBlock  -->
+  <view class='columnBlock'>
+    <view class='columnItem'>
+      <text>碳水(克)</text>
+      <text>{{dietInfo.carbohydrate.sum}}/{{dietInfo.carbohydrate.standard}}</text>
+      <progress class="progress" percent="{{(dietInfo.carbohydrate.sum/dietInfo.carbohydrate.standard)*100}}"  stroke-width="3"  backgroundColor="#ccc" active="true" >
+      </progress>
+    </view>
+    <view class='columnItem'>
+      <text>脂肪(克)</text>
+      <text>{{dietInfo.fat.sum}}/{{dietInfo.fat.standard}}</text>
+      <progress class="progress" percent="{{(dietInfo.fat.sum/dietInfo.fat.standard)*100}}"  stroke-width="3"  backgroundColor="#ccc" active="true" >
+      </progress>
+    </view>
+    <view class='columnItem'>
+      <text>蛋白质(克)</text>
+      <text>{{dietInfo.protein.sum}}/{{dietInfo.protein.standard}}</text>
+      <progress class="progress" percent="{{(dietInfo.protein.sum/dietInfo.protein.standard)*100}}"  stroke-width="3"  backgroundColor="#ccc" active="true" >
+      </progress>
+    </view>
+  </view>
+  
+  <!--dietList  -->
+  <view wx:if="{{dietInfo.diet_standard != 0}}" class='dietList'>
+    <!--早餐  -->
+    <view class='deitItem' bindtap='Toggle_B'>
+      <view class='deit_Icon'>
+        <image class='topBlock' src='../../../images/icon/breakfast.png'></image>
+      </view>
+      <view class='deit_Text'>
+        <text class='deitItem_tit'>早餐</text>
+        <text class='deitItem_text'>建议摄入{{dietInfo.breakfast.suggestion_min}}-{{dietInfo.breakfast.suggestion_max}}千卡</text> 
+      </view>
+      <view class='deit_Add'>
+        <image wx:if="{{dietInfo.breakfast.list.length == 0}}" class='topBlock' bindtap='Add_B' src='../../../images/icon/blueAdd.png'></image>
+        <text wx:else>{{dietInfo.breakfast.sum}}千卡</text>
+      </view>
+    </view>
+    <!--list  -->
+    <view wx:if="{{ifShow_B}}" class='deitItem_contain' wx:for="{{dietInfo.breakfast.list}}" wx:for-index="BreakfastIdx" wx:for-item="Breakfast" wx:key="BreakfastIdx" >
+      <view class='deit_Text'>
+        <text class='deitItem_contain_Tit'>{{Breakfast.food_name}}{{Breakfast.food_amount}}克</text>
+        <!-- <text class='deitItem_contain_Text'>烹饪方式:{{Breakfast.cooktype}}</text>
+        <text class='deitItem_contain_Text'>菜式:{{Breakfast.dishes}}</text> -->
+      </view>
+      <view class='deitItem_contain_count'>
+        <text>{{Breakfast.food_contain}}千卡</text>
+      </view>
+    </view>
+    <!--add continue  -->
+    <view wx:if="{{ifShow_B && dietInfo.breakfast.list.length>0}}" class='addContinue'>
+      <view class='addContinue_bt' bindtap='Add_B'>添加早餐</view>
+    </view>
+
+
+
+    <!--午餐  -->
+    <view class='deitItem' bindtap='Toggle_L'>
+      <view class='deit_Icon'>
+        <image class='topBlock' src='../../../images/icon/lunch.png'></image>
+      </view>
+      <view class='deit_Text'>
+        <text class='deitItem_tit'>午餐</text>
+        <text class='deitItem_text'>建议午餐摄入{{dietInfo.lunch.suggestion_min}}-{{dietInfo.lunch.suggestion_max}}千卡</text> 
+      </view>
+      <view class='deit_Add'>
+        <image wx:if="{{dietInfo.lunch.list.length == 0}}" class='topBlock' bindtap='Add_L' src='../../../images/icon/blueAdd.png'></image>
+        <text wx:else>{{dietInfo.lunch.sum}}千卡</text>
+      </view>
+    </view>
+    <!--list  -->
+    <view wx:if="{{ifShow_L}}" class='deitItem_contain' wx:for="{{dietInfo.lunch.list}}" wx:for-index="LunchIdx" wx:for-item="Lunch" wx:key="LunchIdx">
+      <view class='deit_Text'>
+        <text class='deitItem_contain_Tit'>{{Lunch.food_name}}{{Lunch.food_amount}}克</text>
+        <!-- <text class='deitItem_contain_Text'>烹饪方式:{{Lunch.cooktype}}</text>
+        <text class='deitItem_contain_Text'>菜式:{{Lunch.dishes}}</text> -->
+      </view>
+      <view class='deitItem_contain_count'>
+        <text>{{Lunch.food_contain}}千卡</text>
+      </view>
+    </view>
+    <!--add continue  -->
+    <view wx:if="{{ifShow_L && dietInfo.lunch.list.length>0}}" class='addContinue'>
+      <view class='addContinue_bt' bindtap='Add_L'>添加午餐</view>
+    </view>
+
+
+    <!--晚餐  -->
+    <view class='deitItem' bindtap='Toggle_D'>
+      <view class='deit_Icon'>
+        <image class='topBlock' src='../../../images/icon/dinner.png'></image>
+      </view>
+      <view class='deit_Text'>
+        <text class='deitItem_tit'>晚餐</text>
+        <text class='deitItem_text'>建议晚餐摄入{{dietInfo.dinner.suggestion_min}}-{{dietInfo.dinner.suggestion_max}}千卡</text> 
+      </view>
+      <view class='deit_Add'>
+        <image wx:if="{{dietInfo.dinner.list.length == 0}}" class='topBlock' bindtap='Add_D' src='../../../images/icon/blueAdd.png'></image>
+        <text wx:else>{{dietInfo.dinner.sum}}千卡</text>
+      </view>
+    </view>
+    <!--list  -->
+    <view wx:if="{{ifShow_D}}" class='deitItem_contain' wx:for="{{dietInfo.dinner.list}}" wx:for-index="DinnerIdx" wx:for-item="Dinner" wx:key="DinnerIdx">
+      <view class='deit_Text'>
+        <text class='deitItem_contain_Tit'>{{Dinner.food_name}}{{Dinner.food_amount}}克</text>
+        <!-- <text class='deitItem_contain_Text'>烹饪方式:{{Dinner.cooktype}}</text>
+        <text class='deitItem_contain_Text'>菜式:{{Dinner.dishes}}</text> -->
+      </view>
+      <view class='deitItem_contain_count'>
+        <text>{{Dinner.food_contain}}千卡</text>
+      </view>
+    </view>
+    <!--add continue  -->
+    <view wx:if="{{ifShow_D && dietInfo.dinner.list.length>0}}" class='addContinue'>
+      <view class='addContinue_bt' bindtap='Add_D'>添加晚餐</view>
+    </view>
+    
+  </view>
+  <!--./dietList  -->
+
+
+  <!--report  -->
+  <view wx:if="{{dietInfo.diet_sum != 0 && dietInfo.diet_standard != 0}}" class='DietReport' bindtap='ToDietReport'>
+    <text>查看饮食报告</text>
+  </view>
+
+  <view wx:if="{{dietInfo.diet_sum == 0}}" class='DietReport_cannot'>
+    <text>查看饮食报告</text>
+  </view> 
+
+</view>
+
+
+ 

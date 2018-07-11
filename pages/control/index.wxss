@@ -1,0 +1,222 @@
+page{
+  background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+}
+.ControlWrap{
+  width: 650rpx;
+  margin: 40px auto auto auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ControlItem{
+  width: 650rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/*AirConditioner  */
+.Temperature{
+  width: 100%;
+  height: 204rpx;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.Temperature_number{
+  width: 350rpx;
+  height: calc(100% - 4px);
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: space-between;
+  border: 2px solid #fff;
+  border-radius: 10rpx;
+}
+.Temperature_number_item{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  color: #fff;
+}
+.Temperature_number_item text{
+  flex: 1;
+  height: 100rpx;
+  font-size: 38rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.Temperature_add_min{
+  width: 130rpx;
+  height: calc(100% - 4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 10rpx;
+}
+.Temperature_add_min image{
+  width: 55rpx;
+  height: 55rpx;
+  display: block;
+}
+/*Wind  */
+.Wind{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin: 20px auto;
+  border: 2px solid #fff; 
+  border-radius: 10rpx;
+}
+.WindItem{
+  flex: 1;
+  text-align: center;
+}
+.WindItem image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin: 0 auto;
+}
+/*  */
+.Operations{
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin: 20px auto; 
+  border-radius: 10rpx;
+}
+.OperationItem{
+  /* width: 100%; */
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+}
+.OperationItem:nth-of-type(1){
+  align-items: flex-start;
+}
+.OperationItem:nth-of-type(3){
+  align-items: flex-end;
+}
+.OperationItemIcon{
+  width:100rpx;
+  height: 100rpx;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.OperationItemIcon image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.OperationItem text{
+  width: 100%;
+  text-align: center;
+}
+
+/*Light  */
+.Light{
+  width: 200rpx;
+  height: 200rpx;
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+}
+.Light text{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+/*ArrowDown  */
+.ArrowDown{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.ArrowDown image{
+  width: 80rpx;
+  height: 80rpx;
+  transform: rotate(180deg);
+  display: block;
+}
+/*ArrowUp  */
+.ArrowUp{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.ArrowUp image{
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+}
+/*power chart  */
+.PowerChart{
+  width: 100%;
+  height: 750rpx;
+}
+/*TabBox  */
+.TabBox{
+  width: 600rpx;
+  height: 50rpx;
+  margin: 0 auto 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #3498db;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  overflow: hidden;
+}
+.TabItem{
+  width: 200rpx;
+  text-align: center;
+  padding: 0 10px;
+  height: 100%;
+  line-height: 50rpx;
+  font-size: 30rpx;
+}
+.Active{
+  background: #3498db;
+  color: #fff;
+}
+ec-canvas {
+  width: 100%;
+  height: 750rpx;
+}

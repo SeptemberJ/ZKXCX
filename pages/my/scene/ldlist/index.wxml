@@ -1,0 +1,23 @@
+<view class='TopSubmitBt'>
+  <view wx:if="{{CurHomeRole != 0}}"  bindtap='ToAddLD' class='TopFixedSubmitBt'>选择自动化</view>
+  <view wx:if="{{CurHomeRole == 0}}" class='TopFixedSubmitBt_disabled'>选择自动化</view>
+</view>
+<!--EQList  -->
+<view class='Scene_EQList'>
+  <view class='Scene_EQList_item' wx:for="{{AutomaticList}}" wx:for-index="Automaticdx" wx:for-item="Automatic" wx:key="Automaticdx" bindlongtap='Delete' data-idx='{{Automaticdx}}'>
+    <!-- <image src="{{Automatic.machine_img}}"></image> -->
+    <view class='Scene_EQList_item_text'>
+      <text class='Scene_EQList_item_text_name'>{{Automatic.fname}}</text>
+      <text class='Scene_EQList_item_text_room'></text>
+    </view>
+     <!-- <view class="ControlBt">
+      <image wx:if="{{Automatic.choosed}}" src='../../../../images/icon/foodChoosed.png'></image>
+    </view>  -->
+  </view>
+</view>
+
+<button wx:if="{{AutomaticList.length>0 && CurHomeRole != 0}}" class='MarginT_40 HarfLongBt ColorWhite BgRed' bindtap='Submit'>确定</button> 
+
+<!-- <view class='Scene_EQ_FixedCircle' bindtap='ToAddLD'>
+  <view class='Scene_EQ_innerCircle'>添加</view>
+</view> -->

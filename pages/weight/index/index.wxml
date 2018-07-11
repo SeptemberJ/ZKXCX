@@ -1,0 +1,75 @@
+<view class='SetInfo'>
+  <image src='../../../images/icon/set.png' bindtap='ToSetInfo'></image>
+</view>
+<!--体重显示  -->
+<view class='Weight_ClockDial' bindtap='ToWeightReport'>
+  <view class="container">
+    <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>
+
+<view class='Weight_data'>
+  <text class='Weight_data_BMI'>BMI: {{HeathData.BMI}}</text>
+  <text class='Weight_data_BFR'>体脂率: {{HeathData.Bodyfatrate?HeathData.Bodyfatrate + '%' :'--'}}</text>
+  <!-- <text class='Weight_data_BFR'>体型: {{HeathData.type == 1?'偏瘦':(HeathData.type == 2?'标准':(HeathData.type == 3?'偏胖':(HeathData.type == 4?'肥胖':'重度')))}}</text> -->
+</view>
+
+<view class='Weight_shape'>
+  <image src="{{HeathData.size == 0?'../../../images/icon/shape_0.png':(HeathData.sex == 0 ?'../../../images/icon/shape_m_'+ HeathData.size +'.png':('../../../images/icon/shape_w_'+ HeathData.size +'.png'))}}"></image>
+  <text>您的身形: {{ShapType}}</text>
+</view>
+
+
+<view class='Weight_disease'>
+
+    <view class='disease_item'>
+      <image class='disease_icon' src='../../../images/icon/Sphygmomanometer.png'></image>
+      <text class='disease_name'>高血压</text>
+      <progress class="progress" percent="{{HeathData.hypertension / 5 * 100}}"  stroke-width="3"  activeColor="{{HeathData.hypertension == 1?'#8ce1fa':(HeathData.hypertension == 2?'#78cd78':(HeathData.hypertension == 3?'#ffdc78':(HeathData.hypertension == 4?'#ff4b5a':'#c83a3a')))}}" active="true" >
+      </progress>
+      <view class="levelBlock {{'levelBlock_' + HeathData.hypertension}}">
+        <text>
+        {{HeathData.hypertension == 1?'低风险':(HeathData.hypertension == 2?'一般':(HeathData.hypertension == 3?'中度风险':(HeathData.hypertension == 4?'高度风险':'危险')))}}
+        </text>
+        <view class="Sharp_left {{'Sharp_left_' + HeathData.hypertension}}"></view>
+      </view>
+      
+    </view>
+    <view class='disease_item'>
+      <image class='disease_icon' src='../../../images/icon/Liver.png'></image>
+      <text class='disease_name'>脂肪肝</text>
+      <progress class="progress" percent="{{HeathData.fattyLiver / 5 * 100}}"  stroke-width="3"  activeColor="{{HeathData.fattyLiver == 1?'#8ce1fa':(HeathData.fattyLiver == 2?'#78cd78':(HeathData.fattyLiver == 3?'#ffdc78':(HeathData.fattyLiver == 4?'#ff4b5a':'#c83a3a')))}}" active="true" >
+      </progress>
+      <view class="levelBlock {{'levelBlock_' + HeathData.fattyLiver}}">
+        <text>
+        {{HeathData.fattyLiver == 1?'低风险':(HeathData.fattyLiver == 2?'一般':(HeathData.fattyLiver == 3?'中度风险':(HeathData.fattyLiver == 4?'高度风险':'危险')))}}
+        </text>
+        <view class="Sharp_left {{'Sharp_left_' + HeathData.fattyLiver}}"></view>
+      </view>
+    </view>
+    <!-- <view class='disease_item'>
+      <image class='disease_icon' src='../../../images/icon/bloodFat.png'></image>
+      <text class='disease_name'>高血脂</text>
+      <progress class="progress" percent="{{HeathEvaluation.disease.bloodFat / 5 * 100}}"  stroke-width="3"  activeColor="{{HeathEvaluation.disease.bloodFat == 1?'#8ce1fa':(HeathEvaluation.disease.bloodFat == 2?'#78cd78':(HeathEvaluation.disease.bloodFat == 3?'#ffdc78':(HeathEvaluation.disease.bloodFat == 4?'#ff4b5a':'#c83a3a')))}}" active="true" >
+      </progress>
+      <view class="levelBlock {{'levelBlock_' + HeathEvaluation.disease.bloodFat}}">
+        <text>
+        {{HeathEvaluation.disease.bloodFat == 1?'低风险':(HeathEvaluation.disease.bloodFat == 2?'一般':(HeathEvaluation.disease.bloodFat == 3?'中度风险':(HeathEvaluation.disease.bloodFat == 4?'高度风险':'危险')))}}
+        </text>
+        <view class="Sharp_left {{'Sharp_left_' + HeathEvaluation.disease.bloodFat}}"></view>
+      </view>
+    </view>
+    <view class='disease_item'>
+      <image class='disease_icon' src='../../../images/icon/bloodSugar.png'></image>
+      <text class='disease_name'>糖尿病</text>
+      <progress class="progress" percent="{{HeathEvaluation.disease.diabetes / 5 * 100}}"  stroke-width="3"  activeColor="{{HeathEvaluation.disease.diabetes == 1?'#8ce1fa':(HeathEvaluation.disease.diabetes == 2?'#78cd78':(HeathEvaluation.disease.diabetes == 3?'#ffdc78':(HeathEvaluation.disease.diabetes == 4?'#ff4b5a':'#c83a3a')))}}" active="true" >
+      </progress>
+      <view class="levelBlock {{'levelBlock_' + HeathEvaluation.disease.diabetes}}">
+        <text>
+        {{HeathEvaluation.disease.diabetes == 1?'低风险':(HeathEvaluation.disease.diabetes == 2?'一般':(HeathEvaluation.disease.diabetes == 3?'中度风险':(HeathEvaluation.disease.diabetes == 4?'高度风险':'危险')))}}
+        </text>
+        <view class="Sharp_left {{'Sharp_left_' + HeathEvaluation.disease.diabetes}}"></view>
+      </view>
+    </view> -->
+  <text class='ColorOrage'>以上数据仅供参考，不可作为诊断依据</text>
+</view>

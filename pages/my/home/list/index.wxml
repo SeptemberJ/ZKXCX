@@ -1,0 +1,13 @@
+<view class="HomeList" wx:if="{{HomeList.length>0}}">
+  <view class='HomeItem' wx:for="{{HomeList}}" wx:for-index="HomeIdx" wx:for-item="Home" wx:key="HomeIdx" bindtap='Edit_home' data-homename='{{Home.fname}}' data-homeid='{{Home.id}}' data-membertype='{{Home.memberstype}}'>
+    <text class='HomeItem_name'>{{Home.fname}}</text>
+    <text class='HomeItem_role'>{{Home.memberstype == 0?'家庭成员':'管理员'}}</text>
+    <image class='smallIcon' src='../../../../images/icon/arrow_black.png'></image>
+  </view>
+</view>
+
+<view class="InfoNull">
+  <view class='Btn smallFont' bindtap="FirstAdd">新建家+</view>
+</view>
+  
+

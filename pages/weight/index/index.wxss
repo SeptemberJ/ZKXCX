@@ -1,0 +1,162 @@
+/*SetInfo  */
+.SetInfo{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.SetInfo image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+  display: block
+}
+/*Weight_ClockDial  */
+.Weight_ClockDial{
+  width: 750rpx;
+  height: 550rpx;
+}
+ec-canvas {
+  width: 600rpx;
+  height: 550rpx;
+}
+/*Weight_data  */
+.Weight_data{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Weight_data text{
+  padding: 10rpx 40rpx;
+}
+.Weight_data_BMI{
+  border-right: 1px solid #000;
+}
+/*Weight_shape  */
+.Weight_shape{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.Weight_shape image{
+  width: 500rpx;
+  height: 150rpx;
+  display: block;
+}
+/*Weight_disease  */
+.Weight_disease{
+  width: 710rpx;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+.disease_item{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.progress{
+  width: 300rpx;
+  margin: 10rpx 50rpx 10rpx 0;
+}
+.disease_icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.disease_name{
+  width: 150rpx;
+  text-align: center;
+}
+.levelBlock{
+  width: 130rpx;
+  height: 21px;
+  position: relative;
+  background: green;
+  color: #fff;
+  text-align: center;
+  line-height: 6px;
+  z-index: 999;
+}
+.levelBlock_1 , .Sharp_left_1{
+  background: #8ce1fa;
+}
+.levelBlock_2 , .Sharp_left_2{
+  background: #78cd78;
+}
+.levelBlock_3 , .Sharp_left_3{
+  background: #ffdc78;
+}
+.levelBlock_4 , .Sharp_left_4{
+  background: #ff4b5a;
+}
+.levelBlock_5 , .Sharp_left_5{
+  background: #c83a3a;
+}
+.levelBlock text{
+  font-size: 24rpx;
+}
+.Sharp_left{
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -3px;
+  left: -5px;
+  transform: rotate(45deg) translate(70%,55%);
+  z-index: 9;
+}
+/* .disease_item{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.progress{
+  width: 300rpx;
+  margin: 10rpx 50rpx 10rpx 0;
+}
+.disease_icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.disease_name{
+  width: 150rpx;
+  text-align: center;
+}
+.levelBlock{
+  width: 130rpx;
+  height: 21px;
+  position: relative;
+  background: green;
+  color: #fff;
+  text-align: center;
+  line-height: 18px;
+  z-index: 999;
+}
+.levelBlock text{
+  font-size: 24rpx;
+}
+.Sharp_left{
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -3px;
+  left: -5px;
+  background: green;
+  transform: rotate(45deg) translate(70%,55%);
+  z-index: 9;
+} */
+.ColorOrage{
+  text-align: center;
+  color: #f60;
+}

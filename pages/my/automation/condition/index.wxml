@@ -1,0 +1,36 @@
+<view class='TopSubmitBt'>
+  <view class='TopFixedSubmitBt' bindtap='Submit'>确定</view>
+</view>
+
+<view class='Condition_tit'>
+  <text>系统条件</text>
+</view>
+<view class='Condition_list'>
+  <view class='Condition_Item' bindtap='ChooseTimeBlock'>
+    <image src='../../../../images/icon/scene_timing.png'></image>
+    <view class='Condition_list_item_text'>
+      <text class='Condition_list_item_text_name'>时间</text>
+      <text class='Condition_list_item_text_room'></text>
+    </view>
+    <view class="ControlBt">
+      <image wx:if="{{IfchooseTime}}" src='../../../../images/icon/foodChoosed.png'></image>
+    </view> 
+  </view>
+</view>
+<view class='Condition_tit'>
+  <text>传感器</text>
+</view>
+<view class='Condition_list Condition_list_Sensor'>
+  <view class='Condition_Item' wx:for="{{SensorList}}" wx:for-index="SensorIdx" wx:for-item="Sensor" wx:key="SensorIdx" bindtap='Choose' data-idx='{{SensorIdx}}'>
+    <image src="{{Sensor.kind_img}}"></image>
+    <view class='Condition_list_item_text'>
+      <text class='Condition_list_item_text_name'>{{Sensor.kind_name}}</text>
+      <text class='Condition_list_item_text_room'></text>
+    </view>
+    <view class="ControlBt">
+      <image wx:if="{{Sensor.choosed}}" src='../../../../images/icon/foodChoosed.png'></image>
+    </view> 
+  </view>
+</view>
+
+<!-- <button class='FixedBottomBt MarginT_40 HarfLongBt ColorWhite BgRed' bindtap='Submit'>确定</button>  -->

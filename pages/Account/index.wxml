@@ -1,0 +1,15 @@
+<view class='AccountWrap'>
+  <text class='AccountTit'>SmartHox</text>
+  <text>Wisdom changes life and create a better way of life.</text>
+  <view class='AccountInputItem'>
+    <input type='number' placeholder-class="PlaceholderWhite"  placeholder='请输入您的手机号码' bindinput='ChangeUser_Phone'></input>
+  </view>
+  <view class='AccountInputItem'>
+    <input placeholder-class="PlaceholderWhite" placeholder='请输入验证码' bindinput='ChangeUser_code'></input>
+    <view class="GetCode" bindtap='GetCode'>{{IfGetCode?'获取验证码':CountDown + 's'}}</view>
+  </view>
+  <view class='AccountInputItem'>
+    <view class='AccountBt' bindtap='LoginIn'>登录体验者账号</view>
+  </view>
+</view>
+ 

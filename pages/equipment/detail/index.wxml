@@ -1,0 +1,23 @@
+  <view class='KindTitle Title'>{{Kind}}</view>
+
+<view class='CurInfo'>
+  <view class='CurData'>
+    <text class='data'>{{Number}}</text>
+  </view>
+  <view class='additionalData'>
+    <text>设备：{{EquipmentName}}</text>
+    <text>单位：{{Unit}}</text>
+  </view>
+</view> 
+
+<view class='TabBox'>
+  <view class="{{CurTab == TabIdx?'TabItem Active':'TabItem'}}" bindtap='ChangeTab' wx:for="{{TabMenu}}" wx:for-index="TabIdx" wx:for-item="Tab" wx:key="TabIdx" data-idx='{{TabIdx}}'>{{Tab}}</view>
+</view>
+
+  <view class="container" hidden='{{!isShowFirst}}'>
+    <ec-canvas id="mychart-dom-bar2" canvas-id="mychart-bar2" ec="{{ ec2 }}"></ec-canvas>
+</view>  
+
+ <view class="container" hidden='{{isShowFirst}}'>
+    <ec-canvas   id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view> 

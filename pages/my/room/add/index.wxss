@@ -1,0 +1,31 @@
+page{
+  background: #efefef;
+}
+.inputBar{
+  width: 100%;
+  height: 100rpx;
+  padding: 10rpx;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+.inputBar input{
+  width: calc(100% - 20rpx);
+  padding: 0 10rpx;
+  font-size: 30rpx;
+}
+.Inputitem{
+  width: calc(100% - 20rpx);
+  height: 100rpx;
+  padding: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  background: #fff;
+}
+.SaveBt{
+  width: 50%;
+  margin: 40px auto;
+}

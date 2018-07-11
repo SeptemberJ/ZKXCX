@@ -1,0 +1,69 @@
+.equipmentInfo{
+  width: 710rpx;
+  margin: 0 auto;
+}
+.circle{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 2px solid #c2c2c2;
+}
+.circle text{
+  display: block;
+}
+.addOperation{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #c2c2c2;
+}
+.addItem{
+  width: 200rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between
+}
+.operationIcon{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+}
+.operationIcon_s{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+.colorGreen{
+  color: #259b6c;
+}
+.columnBar{
+  margin: 10px 0;
+}
+.equipmentList{
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.equipmentItem{
+  width: 100%;
+  margin-bottom: 25rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.equipmentName{
+  width: calc(710rpx - 60rpx - 50rpx - 50rpx - 20rpx);
+  padding: 0 10rpx;
+}

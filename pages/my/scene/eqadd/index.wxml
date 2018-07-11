@@ -1,0 +1,21 @@
+<view class='TopSubmitBt' wx:if="{{EQList.length > 0}}"  bindtap='Submit'>
+  <view class='TopFixedSubmitBt'>确定</view>
+</view>
+<!--EQList  -->
+<view class='Scene_EQList'>
+  <view class='Scene_EQList_item' wx:for="{{EQList}}" wx:for-index="EQIdx" wx:for-item="Equipment" wx:key="EQIdx" bindtap='Choose' data-idx='{{EQIdx}}'>
+    <image src="{{Equipment.machine_img}}"></image>
+    <view class='Scene_EQList_item_text'>
+      <text class='Scene_EQList_item_text_name'>{{Equipment.second_name}}</text>
+      <text class='Scene_EQList_item_text_room'>{{Equipment.room_name}}</text>
+    </view>
+     <view class="ControlBt">
+      <image wx:if="{{Equipment.choosed}}" src='../../../../images/icon/foodChoosed.png'></image>
+    </view> 
+  </view>
+</view>
+<!--InfoNull  -->
+<view class="InfoNull" wx:if="{{EQList.length == 0}}">
+  <image src="../../../../images/icon/box-empty.png" />
+  <text>请先添加对应的设备！</text>
+</view>

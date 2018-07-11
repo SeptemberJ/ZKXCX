@@ -1,0 +1,104 @@
+.MessageList{
+  width: 1000%;
+  height: 300px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+.MessageItem{
+  width: 710rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.peopleInfo{
+  width: 710rpx;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.peopleInfo .Info{
+  width: calc(710rpx - 100rpx - 100rpx - 40rpx);
+  padding: 0 20rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.peopleInfo .reply{
+  width: 100rpx;
+  height: 100%;
+  text-align: right;
+}
+.peopleInfo .Avatar{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+}
+/*detailBlock  */
+.detailBlock{
+  width: 100%;
+  margin: 10px auto;
+  text-align: left;
+}
+/*releaseContentBlock  */
+.releaseContentBlock{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #efefef;
+}
+.thumbnail{
+  width: 100px;
+  height: 100px;
+  display: block
+}
+
+/*replyBlock  */
+.replyBlock{
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.TextBox{
+  width: calc(100% - 100px - 20rpx);
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 30rpx;
+}
+.releaseBt{
+  width: 100px;
+  height: 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+.normalBt{
+  width:60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  background: #efefef;
+  color: #ccc;
+  border-radius: 5px;
+}
+.fbBt{
+  width:60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  background: #3498db;
+  color: #fff;
+  border-radius: 5px;
+}

@@ -1,0 +1,80 @@
+<view class="releaseWrap">
+
+  <view class='releaseBt'>
+     <view wx:if="{{!releaseContent && tempFilePaths.length<=0}}" class='normalBt'>发布</view>
+    <view wx:if="{{releaseContent || tempFilePaths.length>0}}" class='fbBt' bindtap='SumitInfo'>发布</view> 
+    <!-- <view  class='fbBt' bindtap='SumitInfo'>发布</view> -->
+  </view>
+
+<!-- <view class="section">
+  <text class='colorBlue'>料理名称</text>
+  <input placeholder='请填写您的料理名' bindinput='ChangefoodName'></input>
+</view>
+
+<view class="section">
+  <picker mode="time"  bindchange="StartTimeChange">
+    <view class="picker">
+      <text class='colorBlue'>开始时间: </text>
+      <text class='colorGray'>{{startTime}}</text>
+    </view>
+  </picker>
+    <picker mode="time"  start="{{startTime}}" bindchange="EndTimeChange">
+    <view class="picker">
+      <text class='colorBlue'>结束时间: </text>
+      <text class='colorGray'>{{endTime}}</text>
+    </view>
+  </picker>
+</view>
+
+<view class="section">
+  <text class='colorBlue'>烹饪方式</text>
+  <input placeholder='请填写您的烹饪方式'  value="{{cookWay}}"bindinput='ChangeCookWay'></input>
+</view>
+
+<view class="section">
+  <text class='colorBlue'>用料</text>
+  <view class='foodList'>
+    <view class='foodItem' wx:for="{{foodList}}" wx:for-index="foodIdx" wx:for-item="foodItem">
+      <input placeholder='食材名称' value='{{foodItem.food_name}}' bindinput='ChangeFoodName' data-idx='{{foodIdx}}'></input>
+      <input placeholder='食材用量' value='{{foodItem.food_amount}}' bindinput='ChangeFoodAmount' data-idx='{{foodIdx}}'></input>
+      <image class='dotDelete' bindtap='DeleteFood' src='../../../images/icon/dotDelete.png' data-idx='{{foodIdx}}'></image>
+    </view>
+  </view>
+  <view class='addBar' bindtap='AddFoodList'>
+    <image src='../../../images/icon/blueAdd.png'></image>
+  </view>
+</view>
+
+<view class="section">
+  <text class='colorBlue'>做法</text>
+    <view class='cookDetailList'>
+    <view class='DetailItem' wx:for="{{cookDetailList}}" wx:for-index="DetailIdx" wx:for-item="DetailItem">
+      <text style='color:#3498db;'>步骤{{DetailIdx + 1}}</text>
+      <textarea auto-height placeholder="做法步骤..." value='{{DetailItem}}' bindinput='ChangeDetail' data-idx='{{DetailIdx}}'/>
+      <image class='dotDelete' bindtap='DeleteDetail' src='../../../images/icon/dotDelete.png' data-idx='{{DetailIdx}}'></image>
+    </view>
+  </view>
+  <view class='addBar' bindtap='AddDetailList'>
+    <image src='../../../images/icon/blueAdd.png'></image>
+  </view>
+</view> -->
+
+   <textarea auto-height placeholder="分享新鲜事..." value='{{releaseContent}}' bindinput='ChangeContent' /> 
+<view class="section">
+  <!-- <text class='colorBlue'>成品展示</text> -->
+  <view class='AddPicture'>
+      <image class="UploadItem" wx:for="{{tempFilePaths}}" wx:for-item="UploadItem" wx:for-index="UploadIdx" wx:key="UploadIdx" src='{{UploadItem}}'>
+        <view class='DeleteBar' bindtap='DeleteFile'>
+          <image src='../../../images/icon/clear.png'></image>
+        </view> 
+      </image>
+    
+    <view class='AddBlock' bindtap='ChooseUploadFiles'>
+      <image src='../../../images/icon/Camera.png'></image>
+      <text>照片</text>
+    </view>
+  </view>
+</view>
+
+
+</view>

@@ -1,0 +1,88 @@
+page{
+  background-color: #efefef;
+}
+.InfoBlock{
+  width: 100%;
+  height: 330rpx;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.Avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.nickName{
+  width: 100%;
+  height: 60rpx;
+  text-align: center;
+  /* padding: 0 10px; */
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.HorizontalColumn{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.HorizontalItem{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.RightBoder{
+  border-right: 1px solid #efefef;
+}
+
+
+.Accumulation{
+  width: 200rpx;
+  height: 50rpx;
+  background: #3498db;
+  color: #fff;
+  border-radius:50rpx;
+  line-height:50rpx;
+  padding:0rpx 20rpx;
+  margin-top:10px;
+
+}
+
+.optionList{
+  width: 750rpx;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.optionItem{
+  width: 710rpx;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+}
+.optionTit{
+  width: calc(100% - 100rpx);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
+.MessageCount{
+  
+}
+.LogOutBlock{
+  width: 80%;
+  margin: 40px auto
+}

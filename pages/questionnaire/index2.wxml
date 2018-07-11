@@ -1,0 +1,24 @@
+<view class='wrap'>
+  <view wx-if="{{ifShowList[QuestionIdx]}}" wx:for="{{questionList}}" wx:for-index="QuestionIdx" wx:for-item="Question" wx:key="QuestionIdx">
+    <text class='question'>>> {{Question.qusetion}} </text>
+    <view wx-if="{{Question.type == 'Single'}}">
+      <!--单选  -->
+       <radio-group class="radio-group" bindchange="ChangeRadio" data-idx="{{QuestionIdx}}">
+        <label class="radio" wx:for="{{Question.answer}}" wx:for-index="AnswerIdx" wx:for-item="Answer" wx:key="AnswerIdx">
+          <radio value="{{Answer.value}}" checked=""/>{{Answer.value}}
+          <view wx-if="{{Answer.img}}">
+            <image src='{{Answer.img}}'></image>
+          </view>
+        </label>
+      </radio-group> 
+    </view>
+    <view wx-if="{{Question.type == 'Multiple'}}">
+      <!--多选  -->
+        <checkbox-group bindchange="ChangeCheckbox" data-idx="{{QuestionIdx}}">
+        <label class="checkbox" wx:for="{{Question.answer}}" wx:for-index="AnswerIdx" wx:for-item="Answer" wx:key="AnswerIdx">
+          <checkbox value="{{Answer.value}}" checked=""/>{{Answer.value}}
+        </label>
+      </checkbox-group>  
+    </view>
+  </view>
+</view>

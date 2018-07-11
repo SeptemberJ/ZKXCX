@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "体重",
+  "usingComponents": {
+    "ec-canvas": "../../../ec-canvas/ec-canvas"
+  }
+}

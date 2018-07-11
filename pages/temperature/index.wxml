@@ -1,0 +1,64 @@
+<view class='temperature'>
+  <view class='temperature_topBlock'>
+    <text>{{airQuality.days}} {{airQuality.week_1}}</text>
+    <text>{{airQuality.citynm}}</text>
+  </view>
+  <view class='temperature_topBlock'>
+    <view class='temperature_midBlock'>
+      <image src='{{airQuality.jsonTemp2.weather_icon}}'></image>
+      <text>{{airQuality.jsonTemp2.weather}} {{airQuality.jsonTemp2.temperature}}</text>
+    </view>
+    <text>{{airQuality.jsonTemp2.wind}} {{airQuality.jsonTemp2.winp}}</text>
+  </view>
+  <view class='airQuality'>
+    <view class='airQuality_aqi'>
+      <text>{{airQuality.aqi}}</text>
+    </view>
+    <view class='airQuality_tip'>
+      <text class="colorfulBlock {{'level_' + airQuality.aqi_levid}}">{{airQuality.aqi_levnm}}</text>
+      <text>温馨提示：{{airQuality.aqi_remark}}</text>
+    </view>
+  </view>
+  <!--life  -->
+  <view class='lifeSuggestion'>
+    <view class='suggestionItem'>
+      <view class='suggestionItem_left'>
+        <image class='suggestionItem_icon' src='../../images/icon/sun.png'></image>
+      </view>
+      <view class='suggestionItem_right'>
+        <text class='suggestionItem_level'>{{airQuality.lifeindex_uv_typenm}} {{airQuality.lifeindex_uv_attr}}</text>
+        <text>{{airQuality.lifeindex_uv_dese}}</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class='suggestionItem'>
+      <view class='suggestionItem_left'>
+        <image class='suggestionItem_icon' src='../../images/icon/pill.png'></image>
+      </view>
+      <view class='suggestionItem_right'>
+        <text class='suggestionItem_level'>{{airQuality.lifeindex_gm_typenm}} {{airQuality.lifeindex_gm_attr}}</text>
+        <text>{{airQuality.lifeindex_gm_dese}}</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class='suggestionItem'>
+      <view class='suggestionItem_left'>
+        <image class='suggestionItem_icon' src='../../images/icon/coat.png'></image>
+      </view>
+      <view class='suggestionItem_right'>
+        <text class='suggestionItem_level'>{{airQuality.lifeindex_ct_typenm}} {{airQuality.lifeindex_ct_attr}}</text>
+        <text>{{airQuality.lifeindex_ct_dese}}</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class='suggestionItem'>
+      <view class='suggestionItem_left'>
+        <image class='suggestionItem_icon' src='../../images/icon/car.png'></image>
+      </view>
+      <view class='suggestionItem_right'>
+        <text class='suggestionItem_level'>{{airQuality.lifeindex_xc_typenm}} {{airQuality.lifeindex_xc_attr}}</text>
+        <text>{{airQuality.lifeindex_xc_dese}}</text>
+      </view>
+    </view>
+  </view>
+</view>

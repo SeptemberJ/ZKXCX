@@ -1,0 +1,48 @@
+<view class='equipmentInfo'>
+  <view class='circle'>
+    <text>我的设备</text>
+    <text class='colorGreen'>{{equipmentList.length}}</text>
+  </view>
+  <view class='addOperation'>
+    <!-- <view class='addItem'>
+      <image class='operationIcon' src='../../../images/icon/QR_code.png' bindtap='ToAdd'></image>
+      <text>扫码添加</text>
+    </view> -->
+    <view class='addItem' bindtap='ToAdd'>
+      <image class='operationIcon' src='../../../images/icon/wrench.png' bindtap='ToAdd'></image>
+      <text>添加</text>
+    </view>
+  </view>
+  <!--list  -->
+  <view class='columnBar'><text>最近添加设备</text></view>
+  <view class='equipmentList' wx:if="{{equipmentList.length > 0}}">
+    <view class='equipmentItem' wx:for="{{equipmentList}}" wx:for-index="EquipmentIdx" wx:for-item="Equipment" wx:key="EquipmentIdx">
+      <image class='operationIcon' src="{{Equipment.machine_img}}" data-id='{{Equipment.id}}' data-name='{{Equipment.second_name}}' bindtap=''></image>
+      <text class='equipmentName' data-id='{{Equipment.id}}' data-name='{{Equipment.second_name}}' bindtap=''>{{Equipment.second_name}}</text>
+       <image class='operationIcon_s' src='../../../images/icon/delete.png' data-id='{{Equipment.id}}' bindtap='Delete'></image>
+       <image wx:if="{{Equipment.sensortype == 1 && Equipment.type == 1}}" class='operationIcon_s' src='../../../images/icon/AnalysisBlue.png' data-id='{{Equipment.id}}' data-name='{{Equipment.second_name}}' bindtap='LookData'></image>
+       <image wx:if="{{ Equipment.sensortype == 1 && Equipment.type == 0}}" class='operationIcon_s' src='../../../images/icon/AnalysisGray.png'></image>
+       <!-- <text class="offline" wx:if="{{ Equipment.sensortype == 1 && Equipment.type == 0}}">offline</text> -->
+    </view>
+  </view>
+    <view class="InfoNull" wx:if="{{equipmentList.length == 0}}">
+      <image src="../../../images/icon/box-empty.png" />
+      <text>您还没有添加过设备！</text>
+    </view>
+</view>
+
+<!--新增设备  -->
+<view class='Mask' wx-if="{{IdAdd}}">
+</view>
+<view class='Modal' wx-if="{{IdAdd}}">
+  <text class='Modal_tit'>新增设备</text>
+  <view class='InputBox'>
+    <input placeholder='请输入设备名称' bindinput='ChangeEquipment_Name'></input>
+    <input placeholder='请输入主控条码' bindinput='ChangeEquipment_Code_F'></input>
+    <input placeholder='请输入设备条码' bindinput='ChangeEquipment_Code_S'></input>
+  </view>
+  <view class='operationBlock'>
+      <view class='operation_item lightGreen' bindtap='Cancel'>取消</view>
+      <view class='operation_item borderL lightGreen' bindtap='AddEquipment'>保存    </view> 
+  </view>
+</view>

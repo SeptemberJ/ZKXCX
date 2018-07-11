@@ -1,0 +1,21 @@
+<view class='TopSubmitBt' wx:if="{{AutomaticList.length > 0}}"  bindtap='Submit'>
+  <view class='TopFixedSubmitBt'>确定</view>
+</view>
+<!--AutomaticList  -->
+<view class='Scene_EQList'>
+  <view class='Scene_EQList_item' wx:for="{{AutomaticList}}" wx:for-index="Automaticdx" wx:for-item="Automatic" wx:key="Automaticdx" bindtap='Choose' data-idx='{{Automaticdx}}'>
+    <!-- <image src="{{Automatic.machine_img}}"></image> -->
+    <view class='Scene_EQList_item_text'>
+      <text class='Scene_EQList_item_text_name'>{{Automatic.fname}}</text>
+      <text class='Scene_EQList_item_text_room'></text>
+    </view>
+     <view class="ControlBt">
+      <image wx:if="{{Automatic.choosed}}" src='../../../../images/icon/foodChoosed.png'></image>
+    </view> 
+  </view>
+</view>
+<!--InfoNull  -->
+<view class="InfoNull" wx:if="{{AutomaticList.length == 0}}">
+  <image src="../../../../images/icon/box-empty.png" />
+  <text>请先创建对应的自动化！</text>
+</view>

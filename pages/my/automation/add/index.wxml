@@ -1,0 +1,87 @@
+<view class='Automation_name'>
+  <text>自动化名称：</text>
+  <input placeholder='请输入自动化名称' bindinput='ChangeName' value='{{AutomaticName}}' disabled='{{CurHomeRole == 0}}'></input>
+</view>
+<!--条件  -->
+<view class='Automation_addBar'>
+  <text>如果</text>
+  <view class='Automation_addBar_circle' wx:if="{{ConditionList.length>0 && CurHomeRole == 1}}" bindtap='AddCondition'>
+    <image src='../../../../images/icon/blueAdd.png'></image>
+  </view>
+</view>
+<view class='ListEmptyBlock' wx:if="{{ConditionList.length<=0}}">
+  <view class='ListEmptyBlock_top' bindtap='AddCondition'>
+    <view class='Automation_addBar_circle' >
+      <image src='../../../../images/icon/blueAdd.png'></image>
+    </view>
+    <text>添加自动化条件</text>
+  </view>
+  <text class='ColorRed'>'或'表示两个或两个以上条件,只要满足其中一项,所以列表中至少有两项为'或',请继续添加!</text>
+</view>
+<!--条件列表  -->
+<view class="Automation_conditionList" wx:if="{{ConditionList.length>0}}">
+  <view class='Automation_EQ_item' wx:for="{{ConditionList}}" wx:for-index="ConditionIdx" wx:for-item="Condition" wx:key="ConditionIdx" bindlongtap='Delete' data-idx='{{ConditionIdx}}'>
+    <image class='smallIcon' src="{{Condition.kind=='time'?'../../../../images/icon/scene_timing.png':Condition.kind_img}}"></image>
+    <view class='Automation_EQ_item_info'>
+      <text>{{Condition.kind_name}}</text>
+      <text></text>
+    </view>
+    <view class='Automation_condition_when'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange"  range="{{ConditionKind[Condition.kind_code]}}" range-key='name' data-idx='{{ConditionIdx}}'>
+        <text>{{ConditionKind[Condition.kind_code][0][Condition.when].name}}</text>
+      </picker>
+    </view>
+    <view class='Automation_condition_status' wx:if="{{Condition.kind!='time'}}">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange"  range="{{ConditionKind[Condition.kind_code]}}" range-key='name' data-idx='{{ConditionIdx}}'>
+        <text>{{ConditionKind[Condition.kind_code][1][Condition.status].name}}</text>
+      </picker>
+    </view>
+    <view class='Automation_condition_status' wx:if="{{Condition.kind_name=='时间'}}">
+      <picker mode="time" value="{{Condition.time_start}}" bindchange="bindTimeChange_start" data-idx='{{ConditionIdx}}'>
+        <text>{{Condition.time_start}}</text>
+      </picker>
+      <picker mode="time" value="{{Condition.time_end}}" bindchange="bindTimeChange_end" data-idx='{{ConditionIdx}}'>
+        <text>{{Condition.time_end}}</text>
+      </picker>
+    </view>
+  </view>
+</view>
+<!--动作  -->
+<view class='Automation_addBar'>
+  <text>就</text>
+  <view class='Automation_addBar_circle' wx:if="{{ActionList.length>0 && CurHomeRole == 1}}" bindtap='AddAction'>
+    <image src='../../../../images/icon/blueAdd.png'></image>
+  </view>
+</view>
+<view class='ListEmptyBlock' wx:if="{{ActionList.length<=0}}">
+  <view class='ListEmptyBlock_top' bindtap='AddAction'>
+    <view class='Automation_addBar_circle'>
+      <image src='../../../../images/icon/blueAdd.png'></image>
+    </view>
+    <text>添加自动化动作</text>
+  </view>
+</view>
+<!--动作列表  -->
+<view class="Automation_conditionList" wx:if="{{ActionList.length>0}}">
+  <view class='Automation_EQ_item' wx:for="{{ActionList}}" wx:for-index="ActionIdx" wx:for-item="Action" wx:key="ActionIdx" bindlongtap='Delete' data-idx='{{ActionIdx}}'>
+    <image class='smallIcon' src="{{Action.kind == 'scene'?Action.scenario_img:Action.machine_img}}"></image>
+    <view class='Automation_EQ_item_info'>
+      <text>{{Action.kind == 'scene'?Action.fname:Action.second_name}}</text>
+      <text>{{Action.kind == 'equipment'?Action.room_name:''}}</text>
+    </view>
+    <view class='Automation_condition_when'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChangeAction"  range="{{ActionKind[Action.kind]}}" range-key='name' data-idx='{{ActionIdx}}'>
+        <text>{{ActionKind[Action.kind][0][Action.status].name}}</text>
+      </picker>
+    </view>
+    <view class='Automation_condition_status'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChangeAction"  range="{{ActionKind[Action.kind]}}" range-key='name' data-idx='{{ActionIdx}}'>
+        <text>{{ActionKind[Action.kind][1][Action.when].name}}</text>
+      </picker>
+    </view>
+  </view>
+</view>
+
+
+<button wx:if="{{CurHomeRole != 0}}" class='MarginT_40 HarfLongBt ColorWhite BgRed' bindtap='Submit'>确定</button>
+<button wx:if="{{CurAutomaticId && CurHomeRole != 0}}" class='MarginT_40 HarfLongBt ColorWhite BgGray' bindtap='DeleteAutomatic'>删除</button>

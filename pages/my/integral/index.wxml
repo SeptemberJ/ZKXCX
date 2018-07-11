@@ -1,0 +1,33 @@
+<view class="topBlock_integral">
+  <view class='integralItem '>
+    <image class='integralIcon' src='../../../images/icon/integral.png'></image>
+    <text class='integralCount' >{{integral}}</text>
+  </view>
+  <view class='integralItem ToRight'>
+    <!-- <image class='smallIcon' src='../../../images/icon/attention.png'></image> -->
+    <!-- <text class='textAlignRight' >如何获取积分?</text> -->
+  </view>
+</view>
+
+<view class='tabBlock_integral'>
+  <text class="{{Cur_tab == 0?'active':''}}" bindtap='ChangeTab'>获取记录</text>
+  <text class="{{Cur_tab == 1?'active':''}}" bindtap='ChangeTab'>消费记录</text>
+</view>
+
+<view wx:if="{{Cur_tab == 0}}" class='getRecordList'>
+  <view class='getItem' wx:for="{{getRecordList}}" wx:for-index="getIdx" wx:for-item="getItem">
+    <view class='getRecordList_left'>
+      <text class='Activity_name'>{{getItem.integraltypename}}</text>
+      <text class='Activity_date'>{{getItem.addtime}}</text>
+    </view>
+    <view class='getRecordList_left'>
+      <text class='Activity_add'>+ {{getItem.integral}}</text>
+    </view>
+  </view>
+  <text wx:if="{{getRecordList.length == 0}}" style='margin:40px auto;'>暂无积分记录</text>
+</view>
+
+
+<view wx:if="{{Cur_tab == 1}}" class='costRecordList'>
+  <text style='margin:40px auto;' wx:if="{{costRecordList.length==0}}">暂无消费记录</text>
+</view>

@@ -1,0 +1,111 @@
+.conclusionBox{
+  width: 100%;
+  height: 150px;
+  background-color: #398e3d; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.leftBox{
+  width: 250rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.AQI{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 4px solid yellow;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 120rpx;
+  text-align: center;
+}
+.rightBox{
+  width: 500rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rightItem{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rightItem text{
+  margin-bottom: 10rpx;
+}
+.ToLeft{
+  align-items: flex-start;
+}
+.ToCenter{
+  align-items: center;
+}
+.addBox{
+  width: 100rpx;
+  height: 100rpx;
+}
+.Avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.nickName{
+  padding: 0 10px;
+  font-size: 28rpx; 
+}
+
+/*equipmentList  */
+.equipmentList{
+  width: 750rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.equipmentItem{
+  width: 373rpx;
+  height: 300rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.equipmentItem:nth-of-type(2n+1){
+  border-right: 1px solid #eee;
+}
+.equipmentName{
+  width: calc(100% - 40rpx);
+  height: 200rpx;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.equipmentOperation{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.OperationItem{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.OperationItem image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx auto;
+}

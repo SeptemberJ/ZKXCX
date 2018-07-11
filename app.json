@@ -1,0 +1,101 @@
+{
+  "pages":[
+    "pages/loading/index",
+    "pages/login/index",
+    "pages/Account/index",
+    "pages/control/index",
+    "pages/index/index",
+    "pages/temperature/index",
+    "pages/Interaction/index/index",
+    "pages/Interaction/my/index",
+    "pages/Interaction/message/index",
+    "pages/Interaction/detail/index",
+    "pages/Interaction/release/index",
+    "pages/add/index",
+    "pages/diet/add/index",
+    "pages/diet/list/index",
+    "pages/diet/search/index",
+    "pages/diet/index/index",
+    "pages/diet/report/index",
+    "pages/weight/index/index",
+    "pages/setInfo/index",
+    "pages/weight/report/index",
+
+    "pages/my/home/add/index",
+    "pages/my/home/list/index",
+    "pages/my/room/add/index",
+    "pages/my/room/list/index",
+    "pages/my/scene/eqlist/index",
+    "pages/my/scene/setting/index",
+    "pages/my/scene/ldlist/index",
+    "pages/my/scene/ldadd/index",
+    "pages/my/scene/timing/index",
+    "pages/my/scene/eqadd/index",
+    "pages/my/scene/log/index",
+
+    "pages/my/automation/add/index",
+    "pages/my/automation/condition/index",
+    "pages/my/automation/action/index",
+    "pages/cooking/index",
+
+    
+    "pages/authorize/index",
+
+    "pages/sport/index",
+   
+    
+
+    "pages/equipment/index/index",
+    "pages/equipment/list/index",
+    "pages/equipment/add/index",
+    "pages/equipment/analysis/index",
+    "pages/equipment/detail/index",
+
+    "pages/questionnaire/index",
+    "pages/my/index/index",
+    "pages/my/integral/index",
+
+    "pages/sign/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "SmartHox",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#3498db",
+    "borderStyle": "#efefef",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon/control.png",
+        "selectedIconPath": "images/icon/control_active.png",
+        "text": "智控"
+      },
+      {
+        "pagePath": "pages/Interaction/index/index",
+        "iconPath": "images/icon/releaseBar.png",
+        "selectedIconPath": "images/icon/releaseBar_acitve.png",
+        "text": "酷玩"
+      },
+      {
+        "pagePath": "pages/sport/index",
+        "iconPath": "images/icon/discover.png",
+        "selectedIconPath": "images/icon/discover-active.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/my/index/index",
+        "iconPath": "images/icon/my.png",
+        "selectedIconPath": "images/icon/my_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": true
+}
+

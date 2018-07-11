@@ -1,0 +1,153 @@
+.top_SumBlock{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.top_SumBlock_sum{
+  font-size: 80rpx;
+  font-weight: bold;
+  color: #3498db;
+}
+.top_SumBlock_sum , .top_SumBlock_food{
+  padding: 10rpx 20rpx;
+}
+/*NutrientElements  */
+.NutrientElements{
+  width: calc(100% - 40rpx);
+  margin: 30px auto;
+  padding: 0rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.Charts{
+  width: 710rpx;
+  height: 300rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+ec-canvas {
+  width: 250rpx;
+  height: 250rpx;
+}
+.Legend{
+  width: 460rpx;
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.LegendItem{
+  width: 460rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.LegendItem text{
+  font-size: 22rpx;
+}
+.LegendColor{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 5rpx;
+}
+.ColorGreen{
+  background: #91c7ae;
+}
+.ColorRed{
+  background: #c23531;
+}
+.ColorYellow{
+  background: #ffdb5c;
+}
+.LegendColumn{
+  width: 270rpx
+}
+.LegendCount{
+  width: 150rpx
+}
+/*DailyTarget  */
+.DailyTarget{
+  width: calc(100% - 40rpx);
+  margin: 30px auto;
+  padding: 0rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.DailyTarget_column{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.DailyTarget_item{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.DailyTarget_item text{
+  font-size: 22rpx;
+  color: #999;
+}
+.progress{
+  width: 150rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  /* margin: 10rpx auto; */
+}
+/*Ingestion  */
+.Ingestion , .DishStyle , .CookingMethod{
+  width: calc(100% - 40rpx);
+  margin: 30px auto;
+  padding: 0rpx 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Ingestion_tit , .DishStyle_tit , .CookingMethod_tit{
+  width: 150rpx;
+}
+.Ingestion_Amount , .DishStyle_Amount , .CookingMethod_Amount{
+  width: (100% - 150rpx);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.Ingestion_Amount input{
+  width: 170rpx;
+  text-align: center;
+  padding: 0 10rpx;
+  margin-right: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.DishStyle_Amount input{
+  width: 170rpx;
+  text-align: center;
+  padding: 0 10rpx;
+  margin-right: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.CookingMethod_Amount picker{
+  width: 170rpx;
+  text-align: center;
+  padding: 0 10rpx;
+  margin-right: 20rpx;
+}
+
+.AddBlock{
+  width: 200rpx;
+  margin: 20px auto;
+}

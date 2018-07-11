@@ -1,0 +1,69 @@
+.Skip{
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: #ccc;
+  color: #fff;
+  position: fixed;
+  top: 60rpx;
+  right: 20rpx;
+  opacity: .5
+}
+.tip{
+  margin: 10px auto 0 auto;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+}
+.Item{
+  margin-bottom: 20px;
+}
+.title{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* .title_left{
+  display: flex;
+  align-items: flex-start;
+} */
+.SmallIcon{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-top: 2px;
+}
+.question{
+  font-size: 16px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.StepBlock{
+  border: 0px solid red;
+}
+radio-group{
+  margin: 10px auto;
+  font-size: 14px;
+}
+radio-group radio{
+  margin-bottom: 10rpx;
+}
+checkbox-group{
+  margin: 10px auto;
+  font-size: 14px;
+}
+checkbox-group checkbox{
+  margin-bottom: 10rpx;
+}
+.OperationBt{
+  width: 80%;
+  height: 80rpx;
+  background: red;
+  margin: 40rpx auto 20rpx auto;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}

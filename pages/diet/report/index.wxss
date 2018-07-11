@@ -1,0 +1,163 @@
+ page{
+  background: #000;
+} 
+ec-canvas {
+  width: 300rpx;
+  height: 300rpx;
+  background: #fff;
+}
+ .Report_Date{
+  width: 250rpx;
+  height: 60rpx;
+  background: #000;
+  margin: 20px auto 40px auto;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 999;
+}
+.Report_Date text{
+  font-size: 36rpx;
+}
+.Border{
+  width: 300rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 48rpx;
+  left: 50%;
+  transform: translate(-50%,0%);
+  z-index: 99;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff; 
+  border-top: 1px solid #fff; 
+  border-bottom: 2px solid #fff; 
+}
+.Report_Calorie , .Report_Nutrient{
+  width: 710rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Report_Tit{
+  color: #fff;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.Report_Main{
+  width: calc(710rpx - 40rpx);
+  padding: 20px 20rpx;
+  margin: 20px auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Report_Main_Top{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Report_Main_Top_Left{
+  width: 400rpx;
+  height: 400rpx;
+}
+.Report_Main_Top_Right{
+  width: 250rpx;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+}
+.Report_Main_CalorieTop_Right text{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.amountData{
+  font-size: 60rpx;
+}
+/*  */
+.Report_Legend{
+  width: 100%;
+  height: 300rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.LegendItem{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.LegendItem text{
+  font-size: 22rpx;
+}
+.LegendColor{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 5rpx;
+}
+.ColorGreen{
+  background: #91c7ae;
+}
+.ColorRed{
+  background: #c23531;
+}
+.ColorYellow{
+  background: #ffdb5c;
+}
+.LegendColumn{
+  /* width: 270rpx; */
+  text-align: center;
+}
+.LegendCount{
+  width: 300rpx;
+  text-align: center;
+}
+
+/*Report_Analysis  */
+.Report_Analysis{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.Report_Analysis_columnTit{
+  width: calc(100% - 40rpx);
+  height: 30px;
+  padding: 0 20rpx;
+  margin-top: 20px;
+  line-height: 30px;
+  background: #dbdbdb;
+  font-size: 32rpx;
+}
+.Report_Analysis_ranking{
+  width: calc(100% - 40rpx);
+  height: 40px;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Report_Analysis_ranking .Index{
+  width: 50rpx;
+}
+.Report_Analysis_ranking .Name{
+  width: calc(100% - 50rpx - 150rpx);
+}
+.Report_Analysis_ranking .Amount{
+  width: 150rpx;
+  text-align: right;
+}

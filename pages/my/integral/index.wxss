@@ -1,0 +1,95 @@
+.topBlock_integral{
+  width: 100%;
+  height: 330rpx;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #21D4FD;
+  background-image: linear-gradient(111deg, #21D4FD 0%, #4221ff 100%);
+
+}
+.integralItem{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.ToRight{
+  justify-content: flex-end;
+}
+.integralCount{
+  font-size: 80rpx;
+  font-weight: bold;
+}
+.integralIcon{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 20rpx;
+}
+/*tabBlock_integral  */
+.tabBlock_integral{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabBlock_integral text{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabBlock_integral .active{
+  font-size: 32rpx;
+  color: #3498db;
+  font-weight: bold;
+  border-bottom: 2px solid #3498db;
+}
+/*getRecordList  */
+.getRecordList{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-bettween;
+}
+.getItem{
+  width: calc(100% - 40rpx);
+  height: 60px;
+  padding: 0 20rpx;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.getRecordList_left , .getRecordList_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Activity_name{
+  font-size: 32rpx;
+  margin: 10rpx 0;
+}
+.Activity_date{
+  font-size: 22rpx;
+}
+.Activity_add{
+  color: #3498db;
+  font-weight: bold;
+}
+
+/*costRecordList  */
+.costRecordList{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-bettween;
+}

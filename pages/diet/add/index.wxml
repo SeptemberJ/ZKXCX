@@ -1,0 +1,95 @@
+<view class="top_SumBlock">
+  <view class='top_SumBlock_sum'>{{Calorie}}<text>千卡</text></view>
+  <view class='top_SumBlock_food'><text>{{DietDetail.food_name}}，{{IngestionAmount}}克</text></view>
+</view>
+
+<view class='NutrientElements'>
+  <text>营养元素</text>
+  <view class='Charts'>
+    <view class="container">
+      <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+    </view>
+    <view class='Legend'>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorGreen'></view>
+        <text class='LegendColumn'>碳水化合物({{DietDetail.NutrientElementsPercent.carbohydrate}}%)</text>
+        <text class='LegendCount'>{{Carbohydrate}}克</text>
+      </view>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorRed'></view>
+        <text class='LegendColumn'>脂肪({{DietDetail.NutrientElementsPercent.fat}}%)</text>
+        <text class='LegendCount'>{{Fat}}克</text>
+      </view>
+      <view class='LegendItem'>
+        <view class='LegendColor ColorYellow'></view>
+        <text class='LegendColumn'>蛋白质({{DietDetail.NutrientElementsPercent.protein}}%)</text>
+        <text class='LegendCount'>{{Protein}}克</text>
+      </view>
+    </view>
+  </view>
+</view> 
+
+<view class='DailyTarget'>
+  <text>每日摄入目标</text>
+  <view class='DailyTarget_column'>
+    <view class='DailyTarget_item'>
+      <text>卡路里</text>
+      <progress class="progress" percent="{{Calorie / DietDetail.DailyTarget.calorie * 100}}"  stroke-width="3"  backgroundColor="#ccc" activeColor="{{Calorie > DietDetail.DailyTarget.calorie?'#e64240':'#1aac19'}}" active="true" >
+      </progress>
+      <text>目标{{DietDetail.DailyTarget.calorie}}千卡</text>
+    </view>
+    <!--  -->
+    <view class='DailyTarget_item'>
+      <text>碳水</text>
+      <progress class="progress" percent="{{Carbohydrate / DietDetail.DailyTarget.carbohydrate * 100}}"  stroke-width="3"  backgroundColor="#ccc" activeColor="{{Carbohydrate > DietDetail.DailyTarget.carbohydrate?'#e64240':'#1aac19'}}" active="true" >
+      </progress>
+      <text>目标{{DietDetail.DailyTarget.carbohydrate}}千卡</text>
+    </view>
+    <!--  -->
+    <view class='DailyTarget_item'>
+      <text>脂肪</text>
+      <progress class="progress" percent="{{Fat / DietDetail.DailyTarget.fat * 100}}"  stroke-width="3"  backgroundColor="#ccc" activeColor="{{Fat > DietDetail.DailyTarget.fat?'#e64240':'#1aac19'}}" active="true" >
+      </progress>
+      <text>目标{{DietDetail.DailyTarget.fat}}千卡</text>
+    </view>
+    <!--  -->
+    <view class='DailyTarget_item'>
+      <text>蛋白质</text>
+      <progress class="progress" percent="{{Protein / DietDetail.DailyTarget.protein * 100}}"  stroke-width="3"  backgroundColor="#ccc" activeColor="{{Protein > DietDetail.DailyTarget.protein?'#e64240':'#1aac19'}}" active="true" >
+      </progress>
+      <text>目标{{DietDetail.DailyTarget.protein}}千卡</text>
+    </view>
+  </view>
+</view>
+
+<view class='Ingestion'>
+  <text class='Ingestion_tit'>摄入量</text>
+  <view class='Ingestion_Amount'>
+    <input type='digit' value='{{IngestionAmount}}' bindinput='ChangeIngestionAmount'></input>
+    <text>克</text>
+  </view>
+</view>
+
+<!-- <view class='CookingMethod'>
+  <text class='CookingMethod_tit'>烹饪方式</text>
+  <view class='CookingMethod_Amount'>
+    <picker bindchange="ChangeCookingMethod" value="{{CookingMethodList[CookingMethodIndex].typename}}" range="{{CookingMethodList}}" range-key="typename">
+      <view class="picker">
+        {{CookingMethodList[CookingMethodIndex].typename}}
+      </view>
+    </picker>
+    <text></text>
+  </view>
+</view>
+
+<view class='DishStyle'>
+  <text class='DishStyle_tit'>菜式</text>
+  <view class='DishStyle_Amount'>
+    <input value='{{DishStyle}}' bindinput='ChangeDishStyle'></input>
+    <text></text>
+  </view>
+</view> -->
+
+<view class='AddBlock'>
+  <button class='ColorWhite BgRed' bindtap='AddFood'>添加</button> 
+</view>

@@ -1,0 +1,25 @@
+<view class='add'>
+  <view class='Inputitem'>
+    <text style='padding-left:10rpx;color:ddd;'>设备图片：</text>
+    <picker-view indicator-style="height: 30px;" style="width: 30px; height: 30px;" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{IconList}}" wx:for-index="IconIdx" wx:for-item="Icon" wx:key="IconIdx" style="line-height: 30px">
+          <image style='width:30px;height:30px;' src="{{Icon.img}}"></image>
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  <view class='Inputitem'>
+    <input placeholder='请输入设备名称' bindinput='ChangeEquipment_Name'></input>
+  </view>
+  <view class='Inputitem'>
+    <input placeholder='请输入主控条码' bindinput='ChangeEquipment_Code_F' value='{{Equipment_Code_F}}'></input>
+    <image class='Icon' src='../../../images/icon/scan.png' bindtap='Scan_Code_F'></image>
+  </view>
+  <view class='Inputitem'>
+    <input placeholder='请输入设备条码' bindinput='ChangeEquipment_Code_S'  value='{{Equipment_Code_S}}'></input>
+    <image class='Icon' src='../../../images/icon/scan.png' bindtap='Scan_Code_S'></image>
+  </view>
+  <view class='Btn' bindtap='AddEquipment'>保存</view> 
+</view>
+

@@ -1,0 +1,59 @@
+<view class="RoomTop">
+  <view class='RoomAddInfo'>
+    <text>{{RoomName}}</text>
+    <!-- <image src='../../../../images/icon/add.png' bindtap='AddEquipment'></image> -->
+  </view>
+</view>
+<view class='Room_tab'>
+  <text class="{{Cur_tab == 0?'tab_ative':''}}" data-idx='0' bindtap='ChangeTab'>设备</text>
+  <text class="{{Cur_tab == 1?'tab_ative':''}}" data-idx='1' bindtap='ChangeTab'>自动化</text>
+  <text class="{{Cur_tab == 2?'tab_ative':''}}" data-idx='2' bindtap='ChangeTab'>场景</text>
+</view>
+
+<!--EQList  -->
+    <view class='EQList' wx:if="{{Cur_tab == 0}}">
+      <view class='EQList_item' wx:for="{{EQList}}" wx:for-index="EQIdx" wx:for-item="Equipment" wx:key="EQIdx" bindlongtap='DeleteEQ' data-id='{{Equipment.id}}'>
+        <image src="{{Equipment.machine_img}}"></image>
+        <view class='EQList_item_text'>
+          <text class='EQList_item_text_name'>{{Equipment.second_name}}</text>
+          <text class='EQList_item_text_room'>{{Equipment.room_name}}</text>
+        </view>
+        <view class="ControlBt {{Equipment.on_off_status == 0?'ControlBt_off':'ControlBt_on'}}" bindtap='ToggleOpenClose_EQ' data-eqid='{{Equipment.id}}' data-eqstatus='{{Equipment.on_off_status}}' data-idx='{{EQIdx}}' wx:if="{{Equipment.sensortype != 1 && Equipment.type != 0}}">{{Equipment.on_off_status == 0?'OFF':'ON'}}</view>
+        <view class="ControlBt_image" wx:if="{{Equipment.sensortype == 1 && Equipment.type == 1}}" bindtap='LookData_EQ' data-eqid='{{Equipment.id}}' data-eqname='{{Equipment.second_name}}'>
+          <image src='../../images/icon/AnalysisBlue.png'></image>
+        </view>
+        <view class="offline" wx:if="{{ Equipment.type == 0}}">offline</view>
+      </view>
+      <view class="InfoNull" wx:if="{{CurHomeRole == 1}}">
+        <view class='Btn smallFont' bindtap="AddEquipment">添加设备+</view>
+      </view>
+    </view>
+    <!--EQAutomatic  -->
+    <view class='EQAutomatic' wx:if="{{Cur_tab == 1}}">
+       <view class='EQList_item' wx:for="{{AutomaticList}}" wx:for-index="AutomaticIdx" wx:for-item="Automatic" wx:key="AutomaticIdx" >
+        <!-- <image src="{{Scene.scenario_img}}" bindtap='ToEdit_automatic' data-automaticid='{{Automatic.id}}'></image> -->
+        <view class='EQList_item_text' bindtap='ToEdit_automatic' data-automaticid='{{Automatic.id}}'>
+          <text class='EQList_item_text_name'>{{Automatic.fname}}</text>
+          <text class='EQList_item_text_room'></text>
+        </view>
+        <view class="ControlBt {{Automatic.on_off_status == 0?'ControlBt_off':'ControlBt_on'}}" bindtap='ToggleOpenClose_automatic' data-automaticid='{{Automatic.id}}' data-automaticstatus='{{Automatic.on_off_status}}' data-idx='{{AutomaticIdx}}'>{{Automatic.on_off_status == 0?'OFF':'ON'}}</view>
+        
+      </view>
+      <view class="InfoNull" wx:if="{{CurHomeRole == 1}}">
+        <view class='Btn smallFont' bindtap="ToAddAutomatic">新建自动化+</view>
+      </view>
+    </view>
+  <!--Scene  -->
+   <view class='EQScene' wx:if="{{Cur_tab == 2}}">
+      <view class='EQList_item' wx:for="{{SceneList}}" wx:for-index="SceneIdx" wx:for-item="Scene" wx:key="SceneIdx" >
+        <image src="{{Scene.scenario_img}}" bindtap='ToEdit_scene' data-sceneid='{{Scene.id}}'></image>
+        <view class='EQList_item_text' bindtap='ToEdit_scene' data-sceneid='{{Scene.id}}'>
+          <text class='EQList_item_text_name'>{{Scene.fname}}</text>
+          <text class='EQList_item_text_room'></text>
+        </view>
+        <view class="ControlBt {{Scene.on_off_status == 0?'ControlBt_off':'ControlBt_on'}}" bindtap='ToggleOpenClose_scene' data-sceneid='{{Scene.id}}' data-scenestatus='{{Scene.on_off_status}}' data-idx='{{SceneIdx}}'>{{Scene.on_off_status == 0?'OFF':'ON'}}</view>
+      </view>
+      <view class="InfoNull" wx:if="{{CurHomeRole == 1}}">
+        <view class='Btn smallFont' bindtap="ToAddScene">新建场景+</view>
+      </view>
+    </view>

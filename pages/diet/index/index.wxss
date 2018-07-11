@@ -1,0 +1,305 @@
+
+page{
+  background: #f0eff4;
+}
+.diet{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start
+}
+.topBlock{
+  width: 100%;
+  height: 550rpx;
+  position: relative;
+}
+.overlay{
+  width: 100%;
+  height: 550rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #53405c;
+  opacity: .9;
+}
+/*Calendar  */
+.Calendar{
+  width: 50%;
+  height: 90rpx;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.picker{
+  width: 60rpx;
+  height: 60rpx;
+}
+/*进度条  */
+.dataCircle{
+  width: 300rpx;
+  height: 300rpx;
+  /* border-radius: 50%;  */
+  position: absolute;
+  top: 90rpx;
+  left: 225rpx;
+  /* border: 4px solid #478ee6;  */
+}
+.wrap,.circle,.percent{  
+    position: absolute;  
+    width: 300rpx;
+    height: 300rpx; 
+    border-radius: 50%;
+    padding: 0 !important; 
+}  
+.wrap{  
+    /* top:50rpx;  
+    left:50rpx;    */
+    background-color: transparent; 
+     
+}  
+.circle{  
+    box-sizing: border-box;  
+    border:10rpx solid #30415b;  
+    clip:rect(0,300px,300px,150px);  
+}
+.circle_over{
+  box-sizing: border-box;  
+  border:10rpx solid red;  
+  clip:rect(0,300px,300px,150px);  
+}
+.clip-auto{  
+    clip:rect(auto, auto, auto, auto);  
+}  
+.percent{  
+    box-sizing: border-box;  
+    top:-8rpx;  
+    left:-8rpx;  
+}  
+.dataCircle .left{  
+    transition:transform ease;  
+    border:10rpx solid #49d7c1;  
+    clip: rect(0,150rpx,300rpx,0);  
+}
+.dataCircle .left_over{  
+    transition:transform ease;  
+    border:10rpx solid red;  
+    clip: rect(0,150rpx,300rpx,0);  
+}  
+.dataCircle .right{  
+    border:10rpx solid #49d7c1;  
+    clip: rect(0,300rpx,300rpx,150rpx);  
+}
+.dataCircle .right_over{ 
+    border:10rpx solid red;  
+    clip: rect(0,300rpx,300rpx,150rpx);  
+}  
+.wth0{  
+    width:0;  
+}  
+.dataInfo{
+    width: 280rpx;  
+    height: 280rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;  
+    box-sizing: border-box;
+    text-align: center; 
+    left: 12rpx;  
+    top: 12rpx;  
+    border-radius: 50%;  
+    background-color: transparent; 
+    z-index: 1;  
+    color: #fff;
+}
+.targetBlock{
+  width: 180rpx;
+  padding: 3rpx 10rpx;
+  border: 1px solid #fff;
+  margin-top: 10px;
+  border-radius: 30rpx;
+}
+.bigSize{
+  font-size: 50rpx;
+}
+.samllSize{
+  font-size: 28rpx;
+}
+.columnBlock{
+  width: 700rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 430rpx;
+  left: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.columnItem{
+  width: 200rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+}
+.progress{
+  width: 200rpx;
+  margin: 10rpx auto;
+}
+/*tabWrap  */
+.tabWrap{
+  width: 100%;
+  height: 60px;
+  background: #f0eff4;
+}
+.tabBox{
+  width: 150px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #646464;
+  border-radius: 15rpx;
+  overflow: hidden;
+  margin: 20px auto;
+}
+.tabBox text{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+.tabBox .active{
+  background: #646464;
+  color: #fff;
+}
+/*dietList  */
+.dietList{
+  width: 100%;
+  margin: 20px auto;
+  background: #f0eff4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.deitItem{
+  width: 680rpx;
+  padding: 15rpx 15rpx;
+  border-radius: 10rpx;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #ccc;
+}
+.deit_Icon , .deit_Icon image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.deit_Text{
+  width: calc(680rpx - 80rpx - 150rpx - 60rpx);
+  height: 50rpx;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.deit_Add{
+  width: 150rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.deit_Add image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+.deitItem_tit{
+  font-size: 40rpx;
+  /* color: #626262; */
+}
+.deitItem_text{
+  font-size: 30rpx;
+  color: #999;
+}
+/*deitItem_contain  */
+.deitItem_contain{
+  width: 680rpx;
+  padding: 15rpx 15rpx;
+  border-radius: 10rpx;
+  height: 40px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+}
+.deitItem_contain_Tit{
+  font-size: 30rpx;
+  color: #626262;
+}
+.deitItem_contain_Text{
+  font-size: 26rpx;
+  color: #999;
+}
+.deitItem_contain_count{
+  height: 40px;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/*addContinue  */
+.addContinue{
+  width: 710rpx;
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+}
+.addContinue_bt{
+  width: 200rpx;
+  height: 30px;
+  margin: 15px auto;
+  background: #53405c;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+
+/*DietReport  */
+.DietReport{
+  width: 300rpx;
+  height: 35px;
+  margin: 20px auto;
+  background: #3498db;
+  color: #fff;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 35px;
+}
+.DietReport_cannot{
+  width: 300rpx;
+  height: 35px;
+  margin: 20px auto;
+  background: #ccc;
+  color: #fff;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 35px;
+
+}

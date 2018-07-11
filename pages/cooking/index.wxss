@@ -1,0 +1,42 @@
+ page{
+  background: #000;
+} 
+/**index.wxss**/
+ec-canvas {
+  width: 750rpx;
+  height: 700rpx;
+}
+.Report_Date{
+  width: 250rpx;
+  height: 60rpx;
+  background: #000;
+  margin: 20px auto 40px auto;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 999;
+}
+.Report_Date text{
+  font-size: 36rpx;
+}
+.Border{
+  width: 300rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 48rpx;
+  left: 50%;
+  transform: translate(-50%,0%);
+  z-index: 99;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff; 
+  border-top: 1px solid #fff; 
+  border-bottom: 2px solid #fff; 
+}
+.Cooking_tab{
+  width: 100%;
+  height: 100rpx;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

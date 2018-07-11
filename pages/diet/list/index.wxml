@@ -1,0 +1,25 @@
+ <view class='top_addFood'>
+  <view class='searchBar'>
+    <input placeholder='输入食物名称,搜索食物' bindfocus='ToSearch'></input>
+  </view>
+  <view class='kindBar'>
+    <scroll-view class="listWrap" scroll-x="true" bindscroll="scroll" style="height:auto;">
+    <view class='kindItem' wx:for="{{kindList}}" wx:for-item="KindItem" wx:for-key="KindIdx" wx:for-index="KindIdx" bindtap='ChangeKind' data-idx='{{KindIdx}}'>
+      <image class="{{CurKind == KindIdx?'kindIcon_active':'kindIcon'}}" src='{{CurKind == KindIdx?KindItem.kind_icon_active:KindItem.kind_icon}}'></image>
+      <text class="{{CurKind == KindIdx?'kindAcitve':'kindNoraml'}}">{{KindItem.kind_name}}</text>
+    </view>
+    </scroll-view>
+  </view>
+</view> 
+
+<view class='foodList'>
+    <view wx:if="{{CurKind + 1 == FoodItem.eattype}}" class='foodItem' wx:for="{{foodList}}" wx:for-item="FoodItem" wx:for-key="FoodIdx" wx:for-index="FoodIdx" bindtap='ToAddFood' data-idx='{{FoodIdx}}'>
+      <view class='food_Text'>
+        <text class='foodItem_tit'>{{FoodItem.eatname}}</text>
+        <text class='foodItem_text'>{{FoodItem.eatweight}}克/{{FoodItem.eatcalories}}千卡</text> 
+      </view>
+       <view wx:if="{{FoodItem.choosed}}" class='food_Add'>
+        <image class='topBlock' src='../../../images/icon/foodChoosed.png'></image>
+      </view> 
+    </view>
+</view>

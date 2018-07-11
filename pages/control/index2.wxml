@@ -1,0 +1,77 @@
+<view class='ControlWrap'>
+  <!--AirConditioner  -->
+  <view wx:if="{{EquipmentType == 0 && !IfShowChart}}" class='ControlItem AirConditioner'>
+    <!--Temperature  -->
+    <view class='Temperature'>
+      <view class='Temperature_number'>
+        <view class='Temperature_number_item'>
+          <text>当前温度</text>
+          <text>15 ℃</text>
+        </view>
+        <view class='Temperature_number_item'>
+          <text>设定温度</text>
+          <text>25 ℃</text>
+        </view>
+      </view>
+      <view class='Temperature_add_min'>
+        <image src='../../images/icon/control_add.png'></image>
+        <image src='../../images/icon/control_min.png'></image>
+      </view>
+    </view>
+    <!--Wind  -->
+    <view class='Wind'>
+      <view class='WindItem'>
+        <image src='../../images/icon/wind.png'></image>
+      </view>
+      <view class='WindItem'>
+        <text>风速 - 高</text>
+      </view>
+    </view>
+    <!--operations  -->
+    <view class='Operations'>
+      <view class='OperationItem'>
+        <view class='OperationItemIcon'>
+          <image src='../../images/icon/hot.png'></image>
+        </view>
+        <text>制热模式</text>
+      </view>
+      <view class='OperationItem'>
+        <view class='OperationItemIcon'>
+          <image src='../../images/icon/saofeng.png'></image>
+        </view>
+        <text>扫风</text>
+      </view>
+      <view class='OperationItem'>
+        <view class='OperationItemIcon'>
+          <image src='../../images/icon/power.png'></image>
+        </view>
+        <text>开关</text>
+      </view>
+    </view>
+  </view> 
+  <!--light  -->
+  <view wx:if="{{EquipmentType == 1 && !IfShowChart}}" class='ControlItem Light' bindtap='OnlySwitch'>
+    <text>ON</text>
+  </view>
+  <!--ArrowDown  -->
+  <view wx:if="{{!IfShowChart}}" class='ArrowDown'>
+    <image bindtap='ToggleShowChart' src='../../images/icon/arrow-down.png'></image>
+  </view>
+    <!--ArrowUp  -->
+  <view wx:if="{{IfShowChart}}" class='ArrowUp'>
+    <image bindtap='ToggleShowChart'  src='../../images/icon/arrow-down.png'></image>
+  </view>
+  <!--power chart  -->
+  <view hidden="{{!IfShowChart}}" class='PowerChart'>
+      <view class='TabBox'>
+        <view class="{{CurTab == TabIdx?'TabItem Active':'TabItem'}}" bindtap='ChangeTab' wx:for="{{TabMenu}}" wx:for-index="TabIdx" wx:for-item="Tab" wx:key="TabIdx" data-idx='{{TabIdx}}'>{{Tab}}</view>
+      </view>
+      <!-- <view class="container" hidden='{{!isShowFirst}}'>
+        <ec-canvas id="mychart-dom-bar2" canvas-id="mychart-bar2" ec="{{ ec2 }}"></ec-canvas>
+      </view> -->
+      <view class="container">
+        <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+      </view>
+  </view>
+
+</view>

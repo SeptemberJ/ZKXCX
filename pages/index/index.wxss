@@ -1,0 +1,1143 @@
+page{
+   background: #f1f6f8; 
+}
+.Wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dataInfo{
+  width: 750rpx;
+  /* height: 150px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #3498db;
+}
+.topBar{
+  width: 710rpx;
+  padding: 0 20rpx;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 30rpx;
+  margin-bottom: 10px;
+}
+.nickName{
+  position: relative;
+  z-index: 9999;
+}
+.Avatar{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.ArrowDown{
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 10rpx; 
+  transform: rotate(90deg);
+}
+.city{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.location{
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 10rpx; 
+}
+.MiddleGps{
+  width: 200rpx;
+  height: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.operation{
+  display: flex;
+  justify-content: flex-end;
+}
+.operationIcon{
+  width: 40rpx;
+  height:  40rpx;
+  margin: 0 0 0 10rpx;
+  display: block;
+}
+.operationText{
+  height:  40rpx;
+  margin: 0 0 0 10rpx;
+  display: block;
+}
+.messageIocn{
+  position: relative;
+}
+.TipDot{
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+  position: relative;
+  top: -2px;
+  left: -4px;
+}
+ .swiper{
+  width: 710rpx;
+  /* height: 200px !important; */
+} 
+/*天气  */
+.temperatureInfo{
+  width: 710rpx;
+  height: 100%;
+  /* height: 150px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+.temperature_conclusion{
+  width: 710rpx;
+  height: 100%;
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.left_add{
+  width: 150rpx;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 15rpx;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.TipBlock{
+  width:calc(100% - 50rpx);
+  height: 30px;
+  padding: 0rpx 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('http://118.25.47.123:8080/upload/swingCloud.png') no-repeat top center/contain ;
+  font-size: 15rpx;
+  color: #3498db;
+  font-weight: bold;
+}
+.TipBlock text{
+  font-size: 24rpx;
+}
+.SwingBlock{
+  width:100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  animation: Swing 1s ease-in-out alternate infinite;
+  -webkit-animation: Swing 1s ease-in-out alternate infinite; /*Safari and Chrome*/
+
+}
+@keyframes Swing /*Safari and Chrome*/
+{
+    0% {
+       -webkit-transform: rotate(15deg);
+       -webkit-transform-origin: top center;
+       -moz-transform: rotate(15deg);
+       -moz-transform-origin: top center;
+       transform: rotate(15deg);
+       transform-origin: top center;
+    }
+    100% {
+       -webkit-transform: rotate(-15deg);
+       -webkit-transform-origin: top center;
+       -moz-transform: rotate(-15deg);
+       -moz-transform-origin: top center;
+       transform: rotate(-15deg);
+       transform-origin: top center;
+    }
+}
+.SwingLine{
+  width: 4rpx;
+  height: 60px;
+  background: #fff;
+}
+.SwingDot{
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+.right_add{
+  width: 280rpx;
+  height: 100px;
+  position: absolute;
+  top: 40px;
+  right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  color: #fff;
+}
+.conclusion_item{
+  width: 710rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right_add_item{
+   display: flex;
+   align-items: center;
+}
+.right_add_item image{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+} 
+.conclusion_item text{
+  margin: 0 10rpx 5rpx 0;
+  color: #fff;
+}
+.temperatureIcon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+}
+.conclusion_temp_curr{
+  font-size: 80rpx;
+  color: #fff;
+  font-weight: bold; 
+}
+.conclusion_aqi_curr{
+  font-size: 70rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.colorfulBlock{
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+.air_level_text{
+  font-size: 40rpx;
+}
+.level_1{
+  background: #01e400;
+}
+.level_2{
+  background: yellow;
+}
+.level_3{
+  background: #fea500;
+}
+.level_4{
+  background: #fe0000;
+}
+.level_5{
+  background: #81007f;
+}
+.level_6{
+  background: #7e0123;
+}
+.ToggleArrow_Down{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3498db;
+}
+.ToggleArrow_Up{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3498db;
+}
+.ToggleArrow_Down image{
+  width: 50rpx;
+  height: 50rpx;
+  animation:breath 1s;
+  -webkit-animation:breath 1s infinite; /*Safari and Chrome*/
+}
+.ToggleArrow_Up image{
+  width: 50rpx;
+  height: 50rpx;
+  transform: rotate(180deg);
+  animation:breath 1s;
+  -webkit-animation:breath 1s infinite; /*Safari and Chrome*/
+}
+@keyframes breath /*Safari and Chrome*/
+{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.TemperatureDetail{
+  width: 100%;
+  height: 0;
+  overflow: hidden; 
+  background-color: #3498db;
+  background-image: linear-gradient(180deg, #3498db 25%, #ffffff 100%);
+}
+.Toggle_show{
+  width: 100%;
+  animation:Toggle_show 1s forwards; 
+  -webkit-animation:Toggle_show 1s forwards;/*Safari and Chrome*/
+}
+@keyframes Toggle_show /*Safari and Chrome*/
+{
+    from {height:0px;}
+    to {height:200px;}
+}
+.Toggle_close{
+  width: 100%;
+  animation:Toggle_close 2s  forwards;
+  -webkit-animation:Toggle_close 2s  forwards; /*Safari and Chrome*/
+}
+@keyframes Toggle_close /*Safari and Chrome*/
+{
+    from {height:200px;}
+    to {height:0px;}
+}
+.Toggle_show .TemperatureDetail_block{
+  position:relative;
+  animation:Up 2s 0s forwards; 
+  -webkit-animation:Up 2s 0s forwards;/*Safari and Chrome*/
+}
+@keyframes Up /*Safari and Chrome*/
+{
+    from {top:250px;}
+    to {top:0px;}
+}
+.Toggle_close .TemperatureDetail_block{
+  position:relative;
+  animation:Down 1.5s  forwards; 
+  -webkit-animation:Down 1.5s  forwards;/*Safari and Chrome*/
+}
+@keyframes Down /*Safari and Chrome*/
+{
+    from {top:0px;}
+    to {top:250px;}
+}
+
+.TemperatureDetail_block{
+  width: 710rpx;
+  padding: 20rpx 10rpx;
+  margin: 10rpx auto;
+  position: relative;
+  top: 250px;
+  border-radius: 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-around;
+  background: rgba(0, 0, 0, 0.2)
+}
+.TemperatureDetail_block_columnTit{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.TemperatureDetail_block_data{
+  width: 710rpx;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.listWrap{
+  white-space: nowrap; 
+  display: flex;
+}
+.listWrap .data_item_scroll{
+  /* width: 177.5rpx; */
+  width:236.6rpx;
+  display: inline-block;
+  text-align: center;
+}
+.data_item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.data_item_scroll image{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 10rpx auto;
+  display: block;
+}
+.data_item_scroll text{
+  width: 100%;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+  display: block;
+}
+/* .CanWrap{
+  width: 170rpx;
+  height: 20px;
+  background: pink;
+  display: flex;
+  flex-wrap: wrap;
+} */
+.data_item .BigSize{
+  font-size: 38rpx;
+  font-weight: bold;
+}
+/*室内空气质量  */
+.IndoorAirQuality{
+  width: 710rpx;
+   height: 180px;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.IndoorAirQuality .tit{
+  height: 20px;
+  margin-bottom: 20px;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.IndoorAirQuality_top , .IndoorAirQuality_bottom{
+  width: 660rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.IndoorAirQuality_top{
+  height: 50rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.IndoorAirQuality_bottom{
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+/*report_data_weight_level  */
+.AirQuality_level{
+  width: 660rpx;
+  height: calc(60rpx + 20rpx + 80rpx);
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.level_text{
+  width: 660rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.level_text text{
+  width: 132rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.level_typeData{
+  width: 660rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.level_typeData text{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+}
+.One{
+  width: 66rpx;
+}
+.Double{
+  width: 132rpx;
+}
+.Fourfold{
+  width: 264rpx;
+}
+.level_bar{
+  width: 660rpx;
+  height: 20rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.level_bar text{
+  height: 20rpx;
+}
+.level_One{
+  width: 66rpx;
+}
+.level_Double{
+  width: 132rpx;
+}
+.level_Fourfold{
+  width: 264rpx;
+}
+.level_1{
+  background: #096;
+}
+.level_2{
+  background: #ffde33;
+}
+.level_3{
+  background: #ff9933;
+}
+.level_4{
+  background: #cc0033;
+}
+.level_5{
+  background: #7e0023;
+}
+.level_6{
+  background: #532525;
+}
+.text_center{
+  text-align: center !important;
+}
+.ThreeInfoBlock{
+  width: 660rpx;
+  height: 50rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.triangleIndex{
+  width: 130rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 18rpx;
+  transform: translateX(-50%);
+}
+.triangleIndex image{
+  width: 130rpx;
+  height: 80rpx;
+  position: relative;
+}
+.AQIBlock{
+  width: 130rpx; 
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0; 
+}
+
+/*DietRecord  */
+.DietRecord{
+  width: 100%;
+  position: relative;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #3498db;
+  color: #fff;
+}
+.DietRecord .tit{
+  font-size: 32rpx;
+  font-weight: bold
+}
+.AddTips{
+  width: 660rpx;
+  max-height: 80rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  padding: 5rpx; 
+  margin: 0 auto;
+  border: 1px solid #fff;
+  text-align: left;
+}
+.AddTips text{
+  font-size: 24rpx;
+}
+.CookingType{
+  width: 750rpx;
+  padding: 20rpx 0;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.CookingType text{
+  width: 150rpx;
+}
+.CookingTypes{
+  width: 730rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items:space-bettween;
+}
+checkbox{
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+   margin-right: 10rpx; 
+}  
+.checkbox{
+  font-size: 30rpx;
+}
+ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   width: 30rpx;/* 选中后对勾大小 */
+   height: 30rpx;/* 选中后对勾大小 */
+   /* line-height: 30rpx; */
+   text-align: left;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   
+   /* transform:scale(1);
+   -webkit-transform:scale(1);  */
+     transform:translate(-80%, -80%) scale(1);
+   -webkit-transform:translate(-80%, -80%) scale(1);  
+} 
+/* .checkbox{
+  width: 30rpx;
+  height: 30rpx;
+  border: 1px solid red;
+  overflow: hidden;
+} */
+
+.CookingType .picker{
+  width:80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  padding: 10rpx;
+}
+.DietRecordSubmit{
+  width: 100rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  padding: 5rpx 15rpx;
+  margin: 20rpx;
+  background: #fff;
+  color: #3498db;
+  border-radius: 8rpx;
+}
+.GoQuestionnaire{
+  width: 150rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #3498db;
+  font-size: 26rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('http://118.25.47.123:8080/upload/swingCloud.png') no-repeat top center/contain ;
+animation: Move 2s ease-in-out alternate infinite;
+  -webkit-animation: Move 2s ease-in-out alternate infinite; /*Safari and Chrome*/
+
+}
+@keyframes Move /*Safari and Chrome*/
+{
+    0% {left:0}
+    100%{left:30rpx}
+}
+
+
+/*carousel  */
+.carousel{
+  width: 750rpx;
+  margin: 20px 0;
+  /* height: 100px;
+  overflow: hidden; */
+}
+.TemperatureSwpier .swiper-item{
+  height: 90%;
+}
+.slide-image{
+  width: 750rpx !important;
+  height: 200rpx !important;  
+}
+.addBlock{
+  width: calc(100% - 80rpx);
+  padding: 20px 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Btn{
+  width: 100px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+/*Card_diet  */
+.Card_diet{
+  width: 700rpx;
+   margin: 50px auto 20px auto; 
+}
+.Card_column{
+  width: 100%;
+  height: 100rpx;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #55CDA7;
+}
+.Card_circle{
+  width: 200rpx;
+  height: 200rpx;
+  text-align: center;
+  line-height: 200rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: -50%;
+  left: -15rpx;
+  background: #55CDA7;
+  color: #fff;
+  font-weight: bold;
+}
+.Card_right_data{
+  height: 100rpx;
+  line-height: 100rpx;
+  position: absolute;
+  top: 0;
+  right: 20rpx;
+  color: #fff;
+}
+.Card_body{
+  width: 700rpx;
+  padding-top: 60rpx;
+  padding-bottom: 30rpx;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+}
+.Card_body_item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.Card_body_item_record{
+  width: 400rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Card_body_item_record text{
+  padding: 0;
+  text-align: left;
+}
+.Card_body_item_record picker{
+  width: 200rpx;
+  border-bottom: 1px solid #ccc;
+  padding: 10rpx;
+}
+.Card_body_item_record input{
+  width: 200rpx;
+  border-bottom: 1px solid #ccc;
+  padding: 10rpx;
+}
+.ReocrdSubmit{
+  width: 100rpx;
+  /* width: 100rpx;
+  height: 40rpx; */
+  padding: 15rpx 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3498db;
+  color: #fff;
+}
+.BorderImage{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #dedede;
+  margin: 10px auto;
+}
+.Card_body_item image{
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+}
+.Card_body_item text{
+  margin: 10rpx auto;
+}
+.ColorGray{
+  font-size: 26rpx;
+  color: #ccc;
+}
+/*dietList  */
+.dietList{
+  width: 100%;
+  margin: 20px auto;
+  background: #f0eff4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.deitItem{
+  width: 680rpx;
+  padding: 15rpx 15rpx;
+  border-radius: 10rpx;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #ccc;
+}
+.deit_Icon , .deit_Icon image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.deit_Text{
+  width: calc(680rpx - 80rpx - 150rpx - 60rpx);
+  height: 50rpx;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.deit_Add{
+  width: 150rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.deit_Add image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+.deitItem_tit{
+  font-size: 40rpx;
+  /* color: #626262; */
+}
+.deitItem_text{
+  font-size: 30rpx;
+  color: #999;
+}
+/*deitItem_contain  */
+.deitItem_contain{
+  width: 680rpx;
+  padding: 15rpx 15rpx;
+  border-radius: 10rpx;
+  height: 40px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+}
+.deitItem_contain_Tit{
+  font-size: 30rpx;
+  color: #626262;
+}
+.deitItem_contain_Text{
+  font-size: 26rpx;
+  color: #999;
+}
+.deitItem_contain_count{
+  height: 40px;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/*addContinue  */
+.addContinue{
+  width: 710rpx;
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+}
+.addContinue_bt{
+  width: 200rpx;
+  height: 30px;
+  margin: 15px auto;
+  background: #53405c;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+
+/*EQBlock  */
+.EQBlock{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.EQBlock_tab{
+  width: 750rpx;
+  height: 80rpx;
+  background: #fff;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-around;
+}
+.EQBlock_tab text{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height:  80rpx;
+}
+.tab_ative{
+  color: #3498db;
+  font-weight: bold;
+  border-bottom: 2px solid #3498db;
+}
+.EQList , .EQScene , .EQRoom , .EQAutomatic{
+  width: 750rpx;
+  padding: 10rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+}
+.EQList_item{
+  width: 750rpx;
+  height: 130rpx;
+  display: flex;
+  justify-content: flex-start;
+  /* justify-content: space-between; */
+  align-items: center; 
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+}
+.EQList_item image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 10rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+.EQList_item_text{
+  width: calc(750rpx - 100rpx - 150rpx);
+  height: 100%;
+  padding-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.EQList_item_text_name{
+  margin-bottom: 8rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.EQList_item_text_room{
+  font-size: 30rpx;
+  color: #999;
+}
+.ControlBt{
+  width: 140rpx;
+  height: 70rpx;
+  margin-right: 10rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border: 1px solid green;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ControlBt_image{
+   width: 140rpx;
+  height: 70rpx;
+  margin-right: 10rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ControlBt_image image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 0;
+}
+.ControlBt_off{
+  color: green;
+}
+.ControlBt_on{
+  color: #fff;
+  background: green;
+}
+.offline{
+  color: #ddd;
+}
+/*Roomlist */
+.Roomlist_item{
+  width: 750rpx;
+  height: 130rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+}
+.Roomlist_item image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 10rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+.Roomlist_item_name{
+  width: calc(750rpx - 100rpx - 150rpx);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.ControlBts{
+  width: 150rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.ControlBts image{
+  width: 70rpx;
+  height: 70rpx;
+  display: inline-block;
+}
+/*CodeBlock  */
+.CodeBlock{
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 20rpx;
+  /* border: 1px solid #efefef; */
+  box-shadow: 0 4px 4px rgba(0,0,0,.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index:999999;
+  background: #fff;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.CodeBlock image{
+  width: 400rpx;
+  height: 400rpx;
+  display: block;
+}
+.CodeBlock .Tip{
+  font-size: 28rpx;
+  color: #333;
+}
+.closeBt{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: -25rpx;
+  right: -25rpx;
+}
+.closeBt image{
+  width: 100%;
+  height: 100%;
+}
+
+/*swiper  */
+.swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 2rpx;
+     position: relative;
+     top: 25px;
+}
+ /* .swiper-box .wx-swiper-dot{
+    width:40rpx;
+    display: inline-flex;
+    height: 10rpx;
+    margin-left: 20rpx;
+    justify-content:space-between;
+}
+.swiper-box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1; 
+    background: rgba(255,255,255,0.8);
+     border-radius: 8rpx 
+}
+.swiper-box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1; 
+    background: rgba(255,255,255,0.8);
+    border-radius: 8rpx
+}
+.swiper-box .wx-swiper-dot-active::before{
+    background:#fff;   
+} */

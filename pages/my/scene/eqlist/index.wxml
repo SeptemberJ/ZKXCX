@@ -1,0 +1,30 @@
+<view class='TopSubmitBt'>
+  <view wx:if="{{CurHomeRole != 0}}" class='TopFixedSubmitBt' bindtap='ToAddEq'>选择设备</view>
+  <view wx:if="{{CurHomeRole == 0}}" class='TopFixedSubmitBt_disabled'>选择设备</view>
+</view>
+
+<view class="Scene_EQList">
+  <view class='Scene_EQList_item' wx:for="{{EQList}}" wx:for-index="EQIdx" wx:for-item="Equipment" wx:key="EQIdx" bindlongtap='Delete' data-idx='{{EQIdx}}'>
+    <image src="{{Equipment.machine_img}}"></image>
+    <view class='Scene_EQList_item_info'>
+      <text>{{Equipment.second_name}}</text>
+      <text>{{Equipment.room_name}}</text>
+    </view>
+    <view class='Scene_EQList_item_status'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange"  range="{{objectMultiArray}}" range-key='name' data-idx='{{EQIdx}}'>
+        <text>{{objectMultiArray[0][Equipment.status].name}}</text>
+      </picker>
+    </view>
+    <view class='Scene_EQList_item_when'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange"  range="{{objectMultiArray}}" range-key='name' data-idx='{{EQIdx}}'>
+        <text>{{objectMultiArray[1][Equipment.when].name}}</text>
+      </picker>
+    </view>
+  </view>
+</view>
+
+<button wx:if="{{EQList.length>0 && CurHomeRole != 0}}" class='MarginT_40 HarfLongBt ColorWhite BgRed' bindtap='Submit'>确定</button> 
+
+ <!-- <view class='Scene_EQ_FixedCircle' bindtap='ToAddEq'>
+  <view class='Scene_EQ_innerCircle'>添加</view>
+</view>   -->

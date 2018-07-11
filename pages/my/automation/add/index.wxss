@@ -1,0 +1,107 @@
+page{
+  background: #efefef;
+}
+.Automation_name{
+  width: 100%;
+  height: 80rpx;
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+}
+.Automation_name text{
+  width: 180rpx;
+  padding: 10rpx 20rpx;
+}
+.Automation_name input{
+  width: calc(100% - 220rpx - 20rpx);
+  padding: 10rpx;
+  font-size: 32rpx;
+}
+.Automation_addBar{
+  width: calc(100% - 40rpx);
+  height: 80rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Automation_addBar text{
+  font-size: 50rpx;
+  font-weight: 700;
+  color: #333;
+}
+.Automation_addBar_circle{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  border: 1px solid #3498db;
+  overflow: hidden;
+}
+.Automation_addBar_circle image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+.ListEmptyBlock{
+  width: calc(100% - 40rpx);
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.ListEmptyBlock_top{
+  width: 100%;
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ListEmptyBlock_top text{
+  padding: 0 10rpx;
+  color: #3498db;
+  font-size: 32rpx;
+}
+/*条件列表  */
+.Automation_conditionList{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+}
+.Automation_EQ_item{
+  width: 710rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.Automation_EQ_item_info{
+  width: 310rpx;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Automation_EQ_item_info text:first-of-type{
+  font-size: 32rpx;
+  color: #3498db;
+}
+.Automation_EQ_item_info text:last-of-type{
+  font-size: 30rpx;
+  color: #999;
+}
+.Automation_condition_when , .Automation_condition_status{
+  width: 150rpx;
+  color: #3498db;
+}
+.Automation_condition_status{
+  text-align: right;
+}

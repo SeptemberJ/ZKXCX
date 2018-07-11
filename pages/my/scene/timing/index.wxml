@@ -1,0 +1,27 @@
+<view class='Timing_time'>
+  <view class='Timing_time_item Timing_time_start'>
+    <text>开始时间</text>
+    <picker mode="time" value="{{TimeStart}}" end="{{TimeEnd}}"bindchange="bindTimeChange_start">
+      <text>{{TimeStart}}</text>
+    </picker>
+  </view>
+  <view class='Timing_time_item Timing_time_end'>
+    <text>结束时间</text>
+    <picker mode="time" value="{{TimeEnd}}" start="{{TimeStart}}" bindchange="bindTimeChange_end">
+      <text>{{TimeEnd}}</text>
+    </picker>
+  </view>
+</view>
+
+<view class='Timing_control'>
+  <view bindtap='ChooseControl' data-idx='0' class="Timing_control_item {{SingleTime?'Timing_control_choosed':''}}">单</view>
+  <view bindtap='ChooseControl' data-idx='1' class="Timing_control_item {{Monday?'Timing_control_choosed':''}}">一</view>
+  <view bindtap='ChooseControl' data-idx='2' class="Timing_control_item {{Tuesday?'Timing_control_choosed':''}}">二</view>
+  <view bindtap='ChooseControl' data-idx='3' class="Timing_control_item {{Wednesday?'Timing_control_choosed':''}}">三</view>
+  <view bindtap='ChooseControl' data-idx='4' class="Timing_control_item {{Thursday?'Timing_control_choosed':''}}">四</view>
+  <view bindtap='ChooseControl' data-idx='5' class="Timing_control_item {{Friday?'Timing_control_choosed':''}}">五</view>
+  <view bindtap='ChooseControl' data-idx='6' class="Timing_control_item {{Saturday?'Timing_control_choosed':''}}">六</view>
+  <view bindtap='ChooseControl' data-idx='7' class="Timing_control_item {{Sunday?'Timing_control_choosed':''}}">日</view>
+</view>
+
+<button wx:if="{{CurHomeRole == 1}}" class='MarginT_40 HarfLongBt ColorWhite BgRed' bindtap='Submit'>确定</button> 

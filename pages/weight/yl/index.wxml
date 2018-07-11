@@ -1,0 +1,47 @@
+<view class='weight'>
+  <image class='topBlock' src='../../images/picture/run.png'></image>
+  <view class='overlay'></view>
+  <!-- <view class='dataCircle'></view> -->
+  <view class='dataCircle'>
+    <view class="wrap">  
+      <view class="circle {{percent>50?'clip-auto':''}}">  
+          <view class="percent left" style="transform:rotate({{(18/5)*percent+'deg'}})"></view>  
+          <view class="percent right {{percent>50?'':'wth0'}}"></view>  
+      </view>  
+       <view class="dataInfo">
+        <view><text class='bigSize'>64.0</text><text>公斤</text></view>
+        <view class='targetBlock'>
+          <text>目标：54.0</text>
+        </view>
+       </view>   
+    </view>
+  </view>
+  <!--历史体重  -->
+  <view class='historyList'>
+    <view class='columnTit'>
+      <image class='columnTit_icon' src='../../images/icon/history_clock.png'></image>
+      <text class='bigFont'>历史体重</text>
+    </view>
+    <view class='List'>
+      <view class='List_item' wx:for="{{history}}" wx:for-index="HistoryIdx" wx:for-item="History" wx:key="HistoryIdx">
+        <!-- <image class='columnTit_icon' src='../../images/icon/history_clock.png'></image> -->
+        <view class='doubleBlock'>
+          <text class='bigFont'>{{History.date}}</text>
+          <text class='kindTit'>{{History.time}}</text>
+        </view>
+        <view class='doubleBlock'>
+          <text class='bigFont'>{{History.weight}}</text>
+          <text class='kindTit'>体重(公斤)</text>
+        </view>
+        <view class='doubleBlock'>
+          <text class='bigFont'>{{History.fat}}</text>
+          <text class='kindTit'>体脂率(%)</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>
+
+
+ 

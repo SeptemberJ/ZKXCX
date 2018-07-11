@@ -1,0 +1,45 @@
+<view class='ActionList'>
+  <!--Scene  -->
+  <view class='Action_item'>
+    <view class='Action_item_tit' data-kind='Scene' bindtap='Toggle'>
+      <text>全部场景</text>
+      <image src='../../../../images/icon/arrow_black.png'></image>
+    </view>
+    <!--list  -->
+    <view class='EQList_list' wx:if="{{Toggle_Scene}}">
+      <view class='EQList_list_Item' wx:for="{{SceneList}}" wx:for-index="EQIdx" wx:for-item="Equipment" wx:key="EQIdx" bindtap='ChooseScene' data-idx='{{EQIdx}}'>
+        <image src="{{Equipment.scenario_img}}"></image>
+        <view class='EQList_list_text'>
+          <text class='EQList_list_text_name'>{{Equipment.fname}}</text>
+          <text class='EQList_list_text_room'></text>
+        </view>
+        <view class="ControlBt">
+          <image wx:if="{{Equipment.choosed}}" src='../../../../images/icon/foodChoosed.png'></image>
+        </view> 
+      </view>
+    </view>
+  </view>
+  <!--EQ  -->
+  <view class='Action_item'>
+    <view class='Action_item_tit'  data-kind='EQ' bindtap='Toggle'>
+      <text>全部设备</text>
+      <image src='../../../../images/icon/arrow_black.png'></image>
+    </view>
+    <!--list  -->
+    <view class='EQList_list' wx:if="{{Toggle_EQ}}">
+      <view class='EQList_list_Item' wx:for="{{EQList}}" wx:for-index="EQIdx" wx:for-item="Equipment" wx:key="EQIdx" bindtap='ChooseEQ' data-idx='{{EQIdx}}'>
+        <image src="{{Equipment.machine_img}}"></image>
+        <view class='EQList_list_text'>
+          <text class='EQList_list_text_name'>{{Equipment.second_name}}</text>
+          <text class='EQList_list_text_room'>{{Equipment.room_name}}</text>
+        </view>
+        <view class="ControlBt">
+          <image wx:if="{{Equipment.choosed}}" src='../../../../images/icon/foodChoosed.png'></image>
+        </view> 
+      </view>
+    </view>
+  </view>
+</view>
+
+<button class='FixedBottomBt MarginT_40 HarfLongBt ColorWhite BgRed' bindtap='Submit'>确定</button>
+

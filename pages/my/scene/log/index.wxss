@@ -1,0 +1,29 @@
+page{
+  background: #efefef;
+}
+.Scene_log{
+  width: calc(100% - 40rpx);
+  padding: 20rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Scene_log_item{
+  width: calc(100% - 60rpx);
+  padding: 40rpx 30rpx;
+  margin: 20rpx auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: #3498db;
+  color: #fff;
+  border-radius: 20rpx;
+}
+.Scene_log_item_time{
+  width: 100%;
+  margin-top: 10rpx;
+  text-align: right;
+}
