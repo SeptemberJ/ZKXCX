@@ -150,8 +150,11 @@ function setOption(chart, DAY) {
               },
               xAxis: {
                 data: res.data.qrcodelist.map(function (item) {
-                  return item[0];
+                  return '';
                 })
+                // data: res.data.qrcodelist.map(function (item) {
+                //   return item[0];
+                // })
               },
               yAxis: {
                 splitLine: {
@@ -267,8 +270,12 @@ function initChart(canvas, width, height) {
               // },
               xAxis: {
                 data: res.data.qrcodelist.map(function (item) {
-                  return item[0];
-                })
+                  return '';
+                }),
+                // data: res.data.qrcodelist.map(function (item) {
+                //   return item[0];
+                // }),
+                // show: false
               },
               yAxis: {
                 splitLine: {
@@ -397,7 +404,7 @@ Page({
             break
           case '甲醛':
             this.setData({
-              Unit: 'mg/m³',
+              Unit: 'ppm',
             })
             break
           case '温度':

@@ -1035,6 +1035,12 @@ animation: Move 2s ease-in-out alternate infinite;
   background: green;
 }
 .offline{
+  width: 150rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 10rpx;
   color: #ddd;
 }
 /*Roomlist */

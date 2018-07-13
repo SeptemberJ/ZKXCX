@@ -258,10 +258,14 @@ Page({
           wx.showToast({
             title: '+' + res.data.integral +'积分！',
             icon: 'success',
-            duration: 3000
+            duration: 1500
           })
           app.globalData.IfHasWirteQuestionnaire = 1
-          setTimeout(this.SkipQuestionnaire(),3000)
+          setTimeout(()=>{
+            wx.switchTab({
+              url: '../index/index'
+            })
+          },1500)
           
           break
         case 0:

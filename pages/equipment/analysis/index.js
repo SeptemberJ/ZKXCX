@@ -13,7 +13,7 @@ Page({
       { 'kind': 'PM2.5', 'value': '', 'img': '../../../images/icon/pm2.5.png', 'unit':'μg/m³'},
       { 'kind': 'CO2', 'value': '', 'img': '../../../images/icon/co2.png', 'unit':'ppm'},
       { 'kind': 'CO', 'value': '', 'img': '../../../images/icon/CO.png', 'unit': 'ppm'},
-      { 'kind': '甲醛', 'value': '', 'img': '../../../images/icon/HCHO.png', 'unit': 'mg/m3' },
+      { 'kind': '甲醛', 'value': '', 'img': '../../../images/icon/HCHO.png', 'unit': 'ppm' },
       { 'kind': '温度', 'value': '', 'img': '../../../images/icon/temperature.png', 'unit': '°C' },
       { 'kind': 'VOCs', 'value': '', 'img': '../../../images/icon/steamer.png', 'unit': '' }
     ]
